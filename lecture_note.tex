@@ -27,7 +27,7 @@
 \usepackage{multirow}
 %\usepackage{hyperref}
 \usepackage{url}
-%\usepackage{natbib}
+\usepackage[numbers]{natbib}
 \usepackage{wrapfig}
 \usepackage{comment}
 \usepackage{listings}
@@ -591,7 +591,7 @@ distance between the predicted output $\hat{\vy}$ and the correct one $\vy$:
     =& \E_{(\vx,\vy) \sim p_{\text{data}}}\left[ D(\hat{\vy}, \vy) \right] 
 \end{align}
 This is often called an expected loss or risk, and minimizing this cost function
-is referred to as {\em expected risk minimization}~\cite{Vapnik1995}.
+is referred to as {\em expected risk minimization} \cite{Vapnik1995}.
 
 Unfortunately $C(\TT)$ cannot be (exactly) computed for a number of reasons. The
 most important reason among them is simply that we don't know what the data
@@ -744,7 +744,7 @@ there are examples in the training set. In other words,
 And, $N$ goes up to millions or billions very easily these days.
 
 This enormous computational cost involved in each GD step has motivated the {\em
-stochastic gradient descent} (SGD) algorithm~\cite{Robbins1951,Bottou1998}. 
+stochastic gradient descent} (SGD) algorithm \cite{Robbins1951,Bottou1998}. 
 
 First, recall from Eq.~\eqref{eq:empirical_cost} that the cost function we
 minimize is the {\em empirical} cost function $\tilde{C}$ which is the
@@ -1093,7 +1093,7 @@ This whole process of extracting a good set of features that will make our
 choice of parametric function family (such as linear regression in this case) is
 called {\em feature extraction}. This feature extraction is an important step in
 machine learning and has often been at the core of many applications such as
-computer vision (the representative example is SIFT~\cite{lowe1999object}.)
+computer vision (the representative example is SIFT \cite{lowe1999object}.)
 
 Feature extraction often requires heavy knowledge of the domain in which this
 function approximation is applied. To use linear regression for computer vision,
@@ -1118,7 +1118,7 @@ I have mainly described so far as if the function we approximate or the function
 we use to approximate returns only a constant value, as in one point $\vy$ in
 the output space. This is however not true, and in fact, the function can return
 anything including a {\em
-distribution}~\cite{Bridle1990,denker1991transforming,bishop1994mixture}.
+distribution} \cite{Bridle1990,denker1991transforming,bishop1994mixture}.
 
 Let's first decompose the data distribution $p_{\data}$ into the product
 of two terms:
@@ -1293,7 +1293,7 @@ It is clear that in this case, the function $f$ returns $K$ values $\left\{
 Furthermore, the sum of $\mu_k$'s must sum to $1$. This can be achieved easily
 by letting $f$ to compute affine transformation of $x$ (or $\phi(x)$) to return
 $K$ (unbounded) real values followed by a so called {\em softmax}
-function~\cite{Bridle1990}:
+function \cite{Bridle1990}:
 \begin{align}
     \label{eq:softmax}
     \mu_k = \frac{\exp(w_k^\top \phi(x) + b_k)}{\sum_{k'=1}^K \exp(w_{k'}^\top
@@ -1371,7 +1371,7 @@ One interesting thing is that if the dimensionality of the transformed feature
 vector $\phi_0(\vx)$ is {\em much} larger than that of $\vx$, the function
 $f(\phi_0(\vx))$ can approximate any function from $\vx$ to $\vy$ under some
 assumptions, even when the parameters $\mW_0$ and $\vb_0$ are randomly
-selected!~\cite{Cover1965} 
+selected! \cite{Cover1965} 
 
 The problem solved, right? We just put a huge matrix $\mW_0$, apply some
 nonlinear function $g$ to it and fit linear regression as I described earlier.
@@ -1380,7 +1380,7 @@ the input $\vx^n$ of all the pairs in the training set to $\phi_0(\vx^n)$.
 
 In fact, there is a group of researchers claiming to have figured this out by
 themselves less than a decade ago (as of 2015) who call this model an {\em
-extreme learning machine}~\cite{Huang2006}. There have been some debates about
+extreme learning machine} \cite{Huang2006}. There have been some debates about
 this so-called extreme learning machine. Here I will not make any comment
 myself, but would be a good exercise for you to figure out why there has been
 debates about this.
@@ -1397,7 +1397,7 @@ What we want is to fully tune the whole thing.
 The basic idea of multilayer perceptron is to stack a large number of those
 feature extraction {\em layers} in Eq.~\eqref{eq:layer} between the input and
 the output. This idea is as old as the whole field of neural network research,
-dating back to early 1960s~\cite{Rosenblatt1962}. However, it took many more
+dating back to early 1960s \cite{Rosenblatt1962}. However, it took many more
 years for people to figure out a way to tune the whole network, both $f$ and
 $\phi$'s together. See \cite{schmidhuber2015deep} and \cite{lecun2015deep}, if you
 are interested in the history.
@@ -1743,7 +1743,7 @@ differentiation.\footnote{
     differentiation, try to Google it and you'll find tons of materials. One
     such reference is \cite{baydin2015automatic}.
 } It is probably the most valuable tool in deep learning, and fortunately many
-widely used toolkits such as Theano~\cite{bergstra2010theano,bastien2012theano}
+widely used toolkits such as Theano \cite{bergstra2010theano,bastien2012theano}
 have implemented this reverse mode of automatic differentiation with an
 extensive number of function nodes used in deep learning everyday.
 
@@ -1849,7 +1849,7 @@ Clearly there is no derivative of this function node.
 
 Does it mean that we're doomed in this case? Fortunately, no. Although I will
 not discuss about this any further in this course,
-Bengio~et~al.~\cite{bengio2013estimating} provide an extensive list of
+Bengio~et~al. \cite{bengio2013estimating} provide an extensive list of
 approaches we can take in order to compute the derivative of the stochastic
 function nodes.
 
@@ -2484,7 +2484,7 @@ See Fig.~\ref{fig:gru} for the graphical illustration.
     \begin{minipage}{0.47\textwidth}
         \caption{
             A graphical illustration of a gated recurrent
-            unit~\cite{Cho-et-al-EMNLP2014}.
+            unit \cite{Cho-et-al-EMNLP2014}.
         }
         \label{fig:gru}
     \end{minipage}
@@ -2634,7 +2634,7 @@ Although I have described one formulation of the long short-term memory unit
 here, there are many other variants proposed over more than a decade since it
 was first proposed. For instance, the forget gate in Eq.~\eqref{eq:lstm_forget}
 was not present in the original work \cite{hochreiter1997long} but was fixed to
-$1$. Gers et al. \cite{gers2000learning} proposed the forget gate few years
+$1$. Gers et al.\ \cite{gers2000learning} proposed the forget gate few years
 after the LSTM was originally proposed, and it turned out to be one of the most
 crucial component in the LSTM. For more variants of the LSTM, I suggest you to
 read \cite{greff2015lstm,jozefowicz2015empirical}.\footnote{
@@ -2661,7 +2661,7 @@ perceptrons) where a (unbounded) piecewise linear function, such as a rectifier
 and maxout, has become standard. In the case of feedforward neural networks, you
 can safely assume that everyone uses some kind of piecewise linear function as
 an activation function in the network. This has become pretty much standard
-since Krizhevsky et al. \cite{krizhevsky2012imagenet} shocked the (computer
+since Krizhevsky et al.\ \cite{krizhevsky2012imagenet} shocked the (computer
 vision) research community by outperforming all the more traditional computer
 vision teams in the ImageNet Large Scale Visual Recognition Challenge
 2012.\footnote{
@@ -2969,7 +2969,7 @@ norm will grow exponentially large. In the opposite case of $e_{\max} <
 $0$. The former case is referred to as {\em exploding gradient}, and the latter
 {\em vanishing gradient}. These cases were studied already at the very early
 years of research in recurrent neural
-networks~\cite{bengio1994learning,hochreiter2001gradient}.
+networks \cite{bengio1994learning,hochreiter2001gradient}.
 
 Using $\tanh$ is a blessing in recurrent neural networks when running the
 network forward, as I described in the previous section. This is however not
@@ -3091,7 +3091,7 @@ effectively forcing the gradient {\em not} to vanish.
 
 This term however was found to help significantly only when the target task, or
 the underlying function, does indeed exhibit long-term dependencies. How can we
-know in advance? Pascanu et al. \cite{pascanu2013difficulty} showed this with
+know in advance? Pascanu et al.\ \cite{pascanu2013difficulty} showed this with
 the well-known toy tasks which were specifically designed to exhibit long-term
 dependencies \cite{hochreiter2001gradient}.
 
@@ -3222,7 +3222,7 @@ listener. In this sense, language use is a function which takes as input the
 surrounding environment, including the others' speech, and returns linguistic
 response, and this function is {\em not} given but learned via observing others'
 use of language and the reinforcement by the surrounding
-environment~\cite{skinner2014verbal}. Also, throughout this course, we are not
+environment \cite{skinner2014verbal}. Also, throughout this course, we are not
 concerned too much about the existing syntactic, or grammatical, structures
 underlying natural language, which makes it difficult for us to say anything
 about the grammatical correctness of a given sentence.
@@ -3736,7 +3736,7 @@ Before ending this section on smoothing techniques for $n$-gram language
 modeling, let me briefly describe one of the most widely used smoothing
 technique, called the modified Kneser-Ney smoothing (KN smoothing), described in
 \cite{chen1996empirical}. This modified KN smoothing is efficiently implemented
-in the open-source software package called KenLM~\cite{Heafield-estimate}.
+in the open-source software package called KenLM \cite{Heafield-estimate}.
 
 First, let us define some quantities. We will use $n_k$ to denote the total
 number of $n$-grams that occur exactly $k$ times in the training corpus. With
@@ -4169,7 +4169,7 @@ distributional hypothesis/structure is to investigate the first layer's weight
 matrix $\mE$ in Eq.~\eqref{eq:word_emb}. This weight matrix can be considered as
 a set of dense vectors of the words in the input vocabulary $\left\{ \ve_1,
 \ve_2, \ldots, \ve_{|V|}\right\}$, and any visualization technique, such as
-principal component analysis (PCA) or t-SNE~\cite{VanDerMaaten08}, can be used
+principal component analysis (PCA) or t-SNE \cite{VanDerMaaten08}, can be used
 to project each high-dimensional word vector into a lower-dimensional space
 (often 2-D or 3-D). 
 
@@ -4185,7 +4185,7 @@ conditional distribution over a word is only dependent on preceding words?
 In fact, we do not have to do so. We can certainly model a natural language
 sentence such that each word in a sentence is conditioned on $2n$ surrounding
 words ($n$ words to the left and $n$ words to the right.) In this case, we get a
-{\em Markov random field (MRF) language model}~\cite{jernite2015fast}.
+{\em Markov random field (MRF) language model} \cite{jernite2015fast}.
 
 \begin{figure}[ht]
     \centering
@@ -4412,7 +4412,7 @@ will not be updated at all.
 
 One way to overcome these two issues is to make somewhat strong, but reasonable
 assumption that {\em similar} input will have similar sentiments. This
-assumption is at the heart of semi-supervised learning~\cite{Chapelle2006}. It
+assumption is at the heart of semi-supervised learning \cite{Chapelle2006}. It
 says that high-dimensional data points in effect lies on a lower-dimensional
 manifold, and the target values of the points on this manifold change smoothly.
 Under this assumption, if we can well model this lower-dimensional data manifold
@@ -4924,7 +4924,7 @@ we can get documents translated in more than one languages, often very
 faithfully to their content. These sources are parliamentary proceedings of
 bilingual, or multilingual countries.
 
-Brown et al.~\cite{brown1990statistical} used the proceedings from the Canadian
+Brown et al.\ \cite{brown1990statistical} used the proceedings from the Canadian
 parliament, which are by law kept in both French and English. All of these
 proceedings are digitally available and called {\em Hansards}. You can check it
 yourself online at \url{http://www.parl.gc.ca/}, and here's an excerpt from the
@@ -5044,7 +5044,7 @@ a way to increase the size of parallel corpora
 crawls the Internet and find a pair of corresponding pages in two different
 languages. One of the largest preprocessed corpus of multiple languages from the
 Internet is the Common Crawl Parallel Corpus created by Smith et
-al.~\cite{smith2013dirt} available at
+al.\ \cite{smith2013dirt} available at
 \url{http://www.statmt.org/wmt13/training-parallel-commoncrawl.tgz}.
 
 
@@ -5225,14 +5225,14 @@ This is however not to be taken as a message saying that the BLEU is the perfect
 automatic evaluation metric. It has been shown that the BLEU is only adequate in
 comparing two similar machine translation systems, but not too much so in
 comparing two very different systems. For instance, Callison-Burch et
-al.~\cite{callison2006re} observed that the BLEU underestimates the quality of
+al.\ \cite{callison2006re} observed that the BLEU underestimates the quality of
 the machine translation system that is {\em not} a phrase-based statistical
 system. See Fig.~\ref{fig:bleu}~(b) for an example.
 
 BLEU is definitely not a perfect metric, and many researchers strive to build a
 better evaluation metric for machine translation systems. Some of the
 alternatives available at the moment are
-METEOR~\cite{denkowski:lavie:meteor-wmt:2014} and TER~\cite{snover2006study}.
+METEOR \cite{denkowski:lavie:meteor-wmt:2014} and TER \cite{snover2006study}.
 
 \section{Neural Machine Translation: \\ Simple Encoder-Decoder Model}
 \label{sec:nmt_simple}
@@ -6032,7 +6032,7 @@ translation systems.
     measured by BLEU \cite{bahdanau2014neural,jean2014using}. 
 $\star$: an ensemble of multiple attention-based models. $\circ$: the
 state-of-the-art phrase-based statistical machine translation
-system~\cite{Durrani2014}.}
+system \cite{Durrani2014}.}
     \label{tab:att_nmt}
 \end{table}
 
@@ -6203,7 +6203,7 @@ This approach of using the encoder-decoder model for describing non-language
 input has become popular in recent years (especially, 2014 and 2015,) and has
 been applied to many applications, including image/video description generation
 and speech recognition. For an extensive list of these applications, I refer the
-readers to a recent review article by Cho et al.~\cite{cho2015describing}.
+readers to a recent review article by Cho et al.\ \cite{cho2015describing}.
 
 \paragraph{Example: Image Caption Generation}
 
@@ -6211,7 +6211,7 @@ Let me take as an example the task of image caption generation.  The possibility
 of using the encoder-decoder model for image caption generation was noticed by
 several research groups (almost simultaneously) last year (2014)
 \cite{Kiros-et-al-ICML2014,vinyals2014show,Karpathy+Li-arxiv2014,Mao+al-arxiv2014,Donahue-et-al-arxiv2014,Fang-et-al-arxiv2014,Chen+Zitnick-arxiv2014}.\footnote{
-    I must however make a note that Kiros et al.~\cite{Kiros-et-al-ICML2014}
+    I must however make a note that Kiros et al.\ \cite{Kiros-et-al-ICML2014}
     proposed a fully neural network based image caption generation earlier than
     all the others cited here did.
 } The success of neural machine translation in \cite{sutskever2014sequence} and
@@ -6229,7 +6229,7 @@ generation}.
     \label{fig:att_img_cap}
 \end{wrapfigure}
 
-Right after these, Xu et al.~\cite{xu2015show} realized that it is possible to
+Right after these, Xu et al.\ \cite{xu2015show} realized that it is possible to
 use the attention-based encoder-decoder model from Sec.~\ref{sec:att_mt} for
 image caption generation. Unlike the simple model, the attention-based model
 requires a context set instead of a context vector. The context set should
@@ -6297,7 +6297,7 @@ A more sophisticated approach is to design and train a model to solve a task
 that requires tight interaction between language and other modalities. As our
 original goal is to build a {\em natural language function}, all we need to do
 is to build a function approximator that takes as input both language and other
-modalities. Recently, Antol et al.~\cite{VQA} built a large-scale dataset of
+modalities. Recently, Antol et al.\ \cite{VQA} built a large-scale dataset of
 question-answer-image triplets, called visual question answering (VQA) for this
 specific purpose. They have carefully built the dataset such that many, if not
 most, questions can only be answered when the accompanying image is taken into
@@ -6587,7 +6587,7 @@ distributed representations.
 
 
 
-\bibliographystyle{abbrv}
+\bibliographystyle{abbrvnat}
 \bibliography{lecture_note}
 
 
