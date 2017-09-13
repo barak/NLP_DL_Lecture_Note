@@ -7,7 +7,7 @@
 \usepackage{longtable}
 \usepackage{paralist}
 \usepackage[normalem]{ulem}
-\usepackage[pdftex,hidelinks]{hyperref}
+\usepackage[pdftex,hidelinks,pagebackref]{hyperref}
 \hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={blue}}
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
@@ -1352,7 +1352,7 @@ of simple transformations which are all learned.\footnote{
     A great article about this was posted recently in
     \url{http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/}.
 }
-Each transformation can be as simple as affine transformation followed by a
+Each transformation can be as simple as affine transformation followed by a
 simple point-wise nonlinearity:
 \begin{align}
     \label{eq:layer}
