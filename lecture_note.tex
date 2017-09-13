@@ -244,11 +244,11 @@
 
 This lecture is going to be the only one where I discuss some philosophical,
 meaning nonpractical, arguments, because according to Chris Manning and Hinrich
-Schuetze, ``{\it even practically-minded people have to confront the issue of
+Schuetze, ``\emph{even practically-minded people have to confront the issue of
 what prior knowledge to try to build into their model}''
 \cite{manning1999foundations}. 
 
-\section{Route we will {\it not} take}
+\section{Route we will \emph{not} take}
 \label{sec:wrong_route}
 
 \subsection{What is Language?}
@@ -270,7 +270,7 @@ early undergrad years. I was not the most attentive student back then, and all I
 can remember is Chomsky's hierarchy and how it has shaped our view on languages,
 in this context, programming/computer languages.  A large part of the course was
 dedicated to explaining which class of languages emerges given a set of
-constraints on a set of {\it generating rules}, or production rules. 
+constraints on a set of \emph{generating rules}, or production rules. 
 
 For instance, if we are given a set of generating rules that do not depend on
 the context/meaning of non-terminal symbols (context-free grammar, CFG), we get
@@ -283,7 +283,7 @@ language.
 
 What Chomsky believes is that this kind of approach applies also to human
 languages, or natural languages. There exists a set of generating rules that
-{\it generates} a natural language. But, then, the obvious question to follow is
+\emph{generates} a natural language. But, then, the obvious question to follow is
 where those generating rules are. Where are they stored? How are they stored? Do
 we have separate generating rules for different languages? 
 
@@ -296,7 +296,7 @@ Those questions are interesting, but out of scope for this course. Those
 questions are the ones linguists try to answer. Generative linguistics aims at
 figuring out what those rules are, how they are combined to form a valid
 sentence, how they are adapted to different languages and so on. We will leave
-these to linguists and continue on to our journey of {\it building a machine
+these to linguists and continue on to our journey of \emph{building a machine
 that understands human languages}. 
 
 \paragraph{Natural Language Understanding}
@@ -304,7 +304,7 @@ that understands human languages}.
 So, let's put these questions aside and trust Chomsky that we, humans, are
 specially designed to store those generating rules somewhere in the brain
 \cite{chomsky1959review,carnie2013syntax}. Or, better yet, let's trust Chomsky
-that there's a universal grammar {\it built in} our brain. In other words, let's
+that there's a universal grammar \emph{built in} our brain. In other words, let's
 say we were born with this set of generating rules for natural languages, and
 while growing, we have adapted this universal grammar toward our native tongue
 (language variation).
@@ -316,9 +316,9 @@ not generate a sentence directly, but generates a sequence of control signals to
 move our muscles to make sound. When heard by other people who understand your
 language, the sound becomes a sentence.
 
-In our case, we are more interested in a {\it machine} hearing that sound, or a
+In our case, we are more interested in a \emph{machine} hearing that sound, or a
 sentence from here on. When a machine heard this sentence, what would/should a
-{\it language understanding machine} do to understand a language, or more simply
+\emph{language understanding machine} do to understand a language, or more simply
 a sentence? Again, we are assuming that this sentence was generated from
 applying a sequence of the existing generating rules. 
 
@@ -328,7 +328,7 @@ sequence is found, or in a fancier term, inferred, the next step will be to
 figure out what kind of mental state of the speaker led to those generating
 rules. 
 
-Let's take an example sentence ``{\it Our company is training workers}'' (from
+Let's take an example sentence ``\emph{Our company is training workers}'' (from
 Sec. 1.3 of \cite{manning1999foundations}), which is a horrible choice, because
 this was used as an example of ambiguity in parsing. Regardless, a speaker
 obviously has an awesome image of her company which trains its workers and wants
@@ -348,19 +348,19 @@ generating rules (assuming a phrase structure grammar)\footnote{
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/manning_parse.pdf}
-    \caption{A parse of ``{\it Our company is training workers}''}
+    \caption{A parse of ``\emph{Our company is training workers}''}
     \label{fig:manning_parse}
 \end{figure}
 
-The machine hears the sentence ``{\it Our company is training workers}'' and
+The machine hears the sentence ``\emph{Our company is training workers}'' and
 infers the parse in Fig.~\ref{fig:manning_parse}. Then, we can make a simple set
 of rules (again!)\ to let the machine answer questions about this sentence, kinds
 of questions that imply that the machine has understood the sentence (language).
-For instance, given a question ``{\it Who is training workers?}'', the machine
+For instance, given a question ``\emph{Who is training workers?}'', the machine
 can answer by noticing that the question is asking for the subject of the verb
 phrase
-``{\it is training}'' acted on the object ``{\it workers}'' and that the subject
-is ``{\it Our company}''.
+``\emph{is training}'' acted on the object ``\emph{workers}'' and that the subject
+is ``\emph{Our company}''.
 
 \paragraph{Side Note: Bayesian Language Understanding} This generative view of
 languages fits quite well with Bayesian modelling (see, e.g.,
@@ -374,7 +374,7 @@ rules (i.e., $P(Z|X)$.) This answers the question of what is the most likely
 mechanism underlying the observed language.
 
 Furthermore, from the perspective of machines, Bayesian approach is attractive.
-In this case, we assume to know {\it the} set of rules in advance and let the
+In this case, we assume to know \emph{the} set of rules in advance and let the
 latent variable $Z$ denote the specific configuration (use) of those rules.
 Given this sequence of applying the rules, a sentence $X$ is generated via the
 conditional distribution $P(X|Z)$. Machine understanding of language is
@@ -387,8 +387,8 @@ Inference and Representation by Prof. David Sontag.
 \paragraph{Understanding vs. Using} 
 What's clear from this example is that in this generative view of languages,
 there is a clear separation between understanding and using. Inferring the
-generating rules from a given sentence is {\it understanding}, and answering a
-question based on this understanding, {\it using}, is a separate activity.
+generating rules from a given sentence is \emph{understanding}, and answering a
+question based on this understanding, \emph{using}, is a separate activity.
 Understanding part is done when the underlying (true) structure has been
 determined regardless of how this understanding be used.
 
@@ -398,16 +398,16 @@ in this course, understanding exists as it is, regardless of what the understood
 insight/knowledge will be used for. And, this is the reason why we do not walk
 down this road.
 
-\section{Road we {\it will} take}
+\section{Road we \emph{will} take}
 \label{sec:intro}
 
 \subsection{Language as a Function}
 
-In this course, we will view a natural/human language as ``{\it a system
+In this course, we will view a natural/human language as ``\emph{a system
 intended to communicate ideas from a speaker to a hearer}''
 \cite{winograd1972understanding}. What this means is that we do not view a
 language as a separate entity that exists on its own. Rather, we view a whole
-system or behaviour of {\it communication} as a language. Furthermore, this view
+system or behaviour of \emph{communication} as a language. Furthermore, this view
 dictates that we must take into account the world surrounding a speaker and a
 hearer in order to understand language.
 
@@ -416,14 +416,14 @@ similar to action or behaviour. Speaking of something is equivalent to acting on
 a listener, as both of them influence the listener in one way or another. The
 purpose of language is then to influence another by efficiently communicate
 one's will or intention.\footnote{
-    Chomsky does not agree: ``{\it it is wrong to think of human use of language
+    Chomsky does not agree: ``\emph{it is wrong to think of human use of language
     as characteristically informative, in fact or in intention.}''
     \cite{chomsky1968linguistic}.
 } This hints at how language came to be (or may have come to be): (evolution)
 language has evolved to facilitate the exchange of ideas among people (learning)
 humans learn language by being either encouraged or punished for the use of
 language. This latter view on how language came to be is similar in spirit to
-the behaviourism of B. F. Skinner (``{\it necessary mediation of reinforcement by
+the behaviourism of B. F. Skinner (``\emph{necessary mediation of reinforcement by
 another organism}'' \cite{skinner2014verbal}.)
 
 This is a radical departure from the generative view of human language, where
@@ -432,7 +432,7 @@ the existence of the outside world nor the existence of a listener. It is no
 wonder why Chomsky was so harsh in criticizing Skinner's work in
 \cite{chomsky1959review}. 
 This departure, as I see it, is the departure toward a functional view of
-language. {\it Language is a function of communication}. 
+language. \emph{Language is a function of communication}. 
 
 \subsection{Language Understanding as a Function Approximation}
 
@@ -3656,8 +3656,8 @@ of all possible trigrams:
 \end{align*}
 
 One may mistakenly believe that we can simply increase the size of corpus
-(collecting even more data) to avoid this issue. However, remember that ``{\it
-data sparsity is almost always an issue in statistical modeling}''
+(collecting even more data) to avoid this issue. However, remember that
+``\emph{data sparsity is almost always an issue in statistical modeling}''
 \cite{chen1996empirical}, which means that more data call for better statistical
 models with often more parameters leading to the issue of data sparsity.
 
@@ -3810,7 +3810,7 @@ Consider an example where three trigrams\footnote{
     Is ``trigram'' a proper term? Certainly not, but it is widely accepted by
     the whole community of natural language processing researchers. Here's an
     interesting discussion on how $n$-grams should be referred to as, from
-    \cite{manning1999foundations}: ``{\it 
+    \cite{manning1999foundations}: ``\emph{
         these
         alternatives are usually referred to as a bigram, a trigram, and a
         four-gram model, respectively. Revealing this will surely be enough to
@@ -3965,7 +3965,7 @@ instead of
 Second, from this perspective, we can see each row of the matrix $\mE$ as a
 continuous-space representation of a corresponding word. $\ve_i$ will be a
 vector representation of the $i$-th word in the vocabulary $V$. This
-representation is often called a {\it word embedding} and should reflect the
+representation is often called a \emph{word embedding} and should reflect the
 underlying meaning of the word. We will discuss this further shortly.
 
 Closely following \cite{bengio2006neural}, we will simply concatenate the
@@ -4109,9 +4109,9 @@ Let us consider an extreme example, where we do bigram modeling with the
 training corpus comprising only three sentences:
 \begin{itemize}
     \itemsep 0em
-    \item There are {\bf three teams} left for the qualification.
-    \item {\bf four teams} have passed the first round.
-    \item {\bf four groups} are playing in the field.
+    \item There are \textbf{three teams} left for the qualification.
+    \item \textbf{four teams} have passed the first round.
+    \item \textbf{four groups} are playing in the field.
 \end{itemize}
 We will focus on the bold-faced phrases; ``three teams'', ``four teams'' and
 ``four group''. The first word of each of these bigrams is a context word, and
@@ -4935,10 +4935,10 @@ Prayers of the 2nd Session, 41st Parliament, Issue 152:\footnote{
 }
 \begin{itemize}
     \itemsep 0em
-    \item {\bf French}: ``ELIZABETH DEUX, par la Grâce de Dieu, REINE du
+    \item \textbf{French}: ``ELIZABETH DEUX, par la Grâce de Dieu, REINE du
         Royaume-Uni, du Canada et de ses autres royaumes et territoires, Chef du
         Commonwealth, D\'efenseur de la Foi.''
-    \item {\bf English}: ``ELIZABETH THE SECOND, by the Grace of God of the
+    \item \textbf{English}: ``ELIZABETH THE SECOND, by the Grace of God of the
         United Kingdom, Canada and Her other Realms and Territories QUEEN, Head
         of the Commonwealth, Defender of the Faith.''
 \end{itemize}
@@ -4958,20 +4958,20 @@ into either 11 or 26 official languages. For instance, here is one example
 \cite{koehn2005europarl}:
 \begin{itemize}
     \itemsep 0em
-    \item {\bf Danish}: det er næsten en personlig rekord for mig dette
+    \item \textbf{Danish}: det er næsten en personlig rekord for mig dette
         efter{\aa}r.
-    \item {\bf German}: das ist f\"ur mich fast pers\"onlicher rekord in diesem
+    \item \textbf{German}: das ist f\"ur mich fast pers\"onlicher rekord in diesem
         herbst .
-    \item {\bf Greek}: (omitted)
-    \item {\bf English}: that is almost a personal record for me this autumn !
-    \item {\bf Spanish}: es la mejor marca que he alcanzado este oto\~no .
-    \item {\bf Finnish}: se on melkein minun enn\"atykseni t\"an\"a syksyn\"a !
-    \item {\bf French}: c ' est pratiquement un record personnel pour moi , cet
+    \item \textbf{Greek}: (omitted)
+    \item \textbf{English}: that is almost a personal record for me this autumn !
+    \item \textbf{Spanish}: es la mejor marca que he alcanzado este oto\~no .
+    \item \textbf{Finnish}: se on melkein minun enn\"atykseni t\"an\"a syksyn\"a !
+    \item \textbf{French}: c ' est pratiquement un record personnel pour moi , cet
         automne !
-    \item {\bf Italian}: e ' quasi il mio record personale dell ' autunno .
-    \item {\bf Dutch}: dit is haast een persoonlijk record deze herfst .
-    \item {\bf Portuguese}: \'e quase o meu recorde pessoal deste semestre !
-    \item {\bf Swedish}: det \"ar n\"astan personligt rekord f\"or mig denna h\"ost !
+    \item \textbf{Italian}: e ' quasi il mio record personale dell ' autunno .
+    \item \textbf{Dutch}: dit is haast een persoonlijk record deze herfst .
+    \item \textbf{Portuguese}: \'e quase o meu recorde pessoal deste semestre !
+    \item \textbf{Swedish}: det \"ar n\"astan personligt rekord f\"or mig denna h\"ost !
 \end{itemize}
 
 The European proceedings has been an invaluable resource for machine translation
@@ -4989,12 +4989,12 @@ often, but they do discuss a diverse set of topics. Here's one such example from
 the Europarl corpus:
 \begin{itemize}
     \itemsep 0em
-    \item {\bf English}: 
+    \item \textbf{English}: 
         Although there are now two Finnish channels and one Portuguese one, there is
         still no Dutch channel, which is what I had requested because Dutch people here
         like to be able to follow the news too when we are sent to this place of exile
         every month.
-    \item {\bf French}: 
+    \item \textbf{French}: 
         Il y a bien deux chaînes finnoises et une chaîne portugaise, mais il n'y a
         toujours aucune chaîne néerlandaise. Pourtant je vous avais demand\'e une chaîne
         n\'eerlandaise, car les Néerlandais aussi désirent pouvoir suivre les actualités
@@ -6023,7 +6023,7 @@ translation systems.
     Simple Enc--Dec & 17.82 &  -- \\
     Attention-based Enc--Dec & 28.45 & +59.7\% \\
     Attention-based Enc--Dec (LV) & 34.11 & +90.7\% \\
-    Attention-based Enc--Dec (LV)$^\star$ & {\bf 37.19} & {\bf +106.0\%} \\
+    Attention-based Enc--Dec (LV)$^\star$ & \textbf{37.19} & \textbf{+106.0\%} \\
     \hline
     State-of-the-art SMT$^\circ$ & 37.03 & -- 
     \end{tabular}
