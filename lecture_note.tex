@@ -244,11 +244,11 @@
 
 This lecture is going to be the only one where I discuss some philosophical,
 meaning nonpractical, arguments, because according to Chris Manning and Hinrich
-Schuetze, ``\emph{even practically-minded people have to confront the issue of
+Schuetze, ``\textit{even practically-minded people have to confront the issue of
 what prior knowledge to try to build into their model}''
 \citep{manning1999foundations}.
 
-\section{Route we will \emph{not} take}
+\section{Route we will \textit{not} take}
 \label{sec:wrong_route}
 
 \subsection{What is Language?}
@@ -270,7 +270,7 @@ early undergrad years. I was not the most attentive student back then, and all I
 can remember is Chomsky's hierarchy and how it has shaped our view on languages,
 in this context, programming/computer languages.  A large part of the course was
 dedicated to explaining which class of languages emerges given a set of
-constraints on a set of \emph{generating rules}, or production rules. 
+constraints on a set of \textit{generating rules}, or production rules. 
 
 For instance, if we are given a set of generating rules that do not depend on
 the context/meaning of non-terminal symbols (context-free grammar, CFG), we get
@@ -283,7 +283,7 @@ language.
 
 What Chomsky believes is that this kind of approach applies also to human
 languages, or natural languages. There exists a set of generating rules that
-\emph{generates} a natural language. But, then, the obvious question to follow is
+\textit{generates} a natural language. But, then, the obvious question to follow is
 where those generating rules are. Where are they stored? How are they stored? Do
 we have separate generating rules for different languages? 
 
@@ -296,7 +296,7 @@ Those questions are interesting, but out of scope for this course. Those
 questions are the ones linguists try to answer. Generative linguistics aims at
 figuring out what those rules are, how they are combined to form a valid
 sentence, how they are adapted to different languages and so on. We will leave
-these to linguists and continue on to our journey of \emph{building a machine
+these to linguists and continue on to our journey of \textit{building a machine
 that understands human languages}. 
 
 \paragraph{Natural Language Understanding}
@@ -304,7 +304,7 @@ that understands human languages}.
 So, let's put these questions aside and trust Chomsky that we, humans, are
 specially designed to store those generating rules somewhere in the brain
 \citep{chomsky1959review,carnie2013syntax}. Or, better yet, let's trust Chomsky
-that there's a universal grammar \emph{built in} our brain. In other words, let's
+that there's a universal grammar \textit{built in} our brain. In other words, let's
 say we were born with this set of generating rules for natural languages, and
 while growing, we have adapted this universal grammar toward our native tongue
 (language variation).
@@ -316,9 +316,9 @@ not generate a sentence directly, but generates a sequence of control signals to
 move our muscles to make sound. When heard by other people who understand your
 language, the sound becomes a sentence.
 
-In our case, we are more interested in a \emph{machine} hearing that sound, or a
+In our case, we are more interested in a \textit{machine} hearing that sound, or a
 sentence from here on. When a machine heard this sentence, what would/should a
-\emph{language understanding machine} do to understand a language, or more simply
+\textit{language understanding machine} do to understand a language, or more simply
 a sentence? Again, we are assuming that this sentence was generated from
 applying a sequence of the existing generating rules. 
 
@@ -328,7 +328,7 @@ sequence is found, or in a fancier term, inferred, the next step will be to
 figure out what kind of mental state of the speaker led to those generating
 rules. 
 
-Let's take an example sentence ``\emph{Our company is training workers}''
+Let's take an example sentence ``\textit{Our company is training workers}''
 \citep[Sec.~1.3]{manning1999foundations}, which is a horrible choice, because
 this was used as an example of ambiguity in parsing. Regardless, a speaker
 obviously has an awesome image of her company which trains its workers and wants
@@ -348,19 +348,19 @@ generating rules (assuming a phrase structure grammar)\footnote{
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/manning_parse.pdf}
-    \caption{A parse of ``\emph{Our company is training workers}''}
+    \caption{A parse of ``\textit{Our company is training workers}''}
     \label{fig:manning_parse}
 \end{figure}
 
-The machine hears the sentence ``\emph{Our company is training workers}'' and
+The machine hears the sentence ``\textit{Our company is training workers}'' and
 infers the parse in Fig.~\ref{fig:manning_parse}. Then, we can make a simple set
 of rules (again!)\ to let the machine answer questions about this sentence, kinds
 of questions that imply that the machine has understood the sentence (language).
-For instance, given a question ``\emph{Who is training workers?}'', the machine
+For instance, given a question ``\textit{Who is training workers?}'', the machine
 can answer by noticing that the question is asking for the subject of the verb
 phrase
-``\emph{is training}'' acted on the object ``\emph{workers}'' and that the subject
-is ``\emph{Our company}''.
+``\textit{is training}'' acted on the object ``\textit{workers}'' and that the subject
+is ``\textit{Our company}''.
 
 \paragraph{Side Note: Bayesian Language Understanding} This generative view of
 languages fits quite well with Bayesian modelling
@@ -374,7 +374,7 @@ rules (i.e., $P(Z|X)$.) This answers the question of what is the most likely
 mechanism underlying the observed language.
 
 Furthermore, from the perspective of machines, Bayesian approach is attractive.
-In this case, we assume to know \emph{the} set of rules in advance and let the
+In this case, we assume to know \textit{the} set of rules in advance and let the
 latent variable $Z$ denote the specific configuration (use) of those rules.
 Given this sequence of applying the rules, a sentence $X$ is generated via the
 conditional distribution $P(X|Z)$. Machine understanding of language is
@@ -387,27 +387,27 @@ Inference and Representation by Prof. David Sontag.
 \paragraph{Understanding vs. Using} 
 What's clear from this example is that in this generative view of languages,
 there is a clear separation between understanding and using. Inferring the
-generating rules from a given sentence is \emph{understanding}, and answering a
-question based on this understanding, \emph{using}, is a separate activity.
+generating rules from a given sentence is \textit{understanding}, and answering a
+question based on this understanding, \textit{using}, is a separate activity.
 Understanding part is done when the underlying (true) structure has been
 determined regardless of how this understanding be used.
 
 To put it in a slightly different wording, language understanding does not
-require its use, or downstream tasks. In this road that we will {\em not} take
+require its use, or downstream tasks. In this road that we will \emph{not} take
 in this course, understanding exists as it is, regardless of what the understood
 insight/knowledge will be used for. And, this is the reason why we do not walk
 down this road.
 
-\section{Road we \emph{will} take}
+\section{Road we \textit{will} take}
 \label{sec:intro}
 
 \subsection{Language as a Function}
 
-In this course, we will view a natural/human language as ``\emph{a system
+In this course, we will view a natural/human language as ``\textit{a system
 intended to communicate ideas from a speaker to a hearer}''
 \citep{winograd1972understanding}. What this means is that we do not view a
 language as a separate entity that exists on its own. Rather, we view a whole
-system or behaviour of \emph{communication} as a language. Furthermore, this view
+system or behaviour of \textit{communication} as a language. Furthermore, this view
 dictates that we must take into account the world surrounding a speaker and a
 hearer in order to understand language.
 
@@ -416,14 +416,14 @@ similar to action or behaviour. Speaking of something is equivalent to acting on
 a listener, as both of them influence the listener in one way or another. The
 purpose of language is then to influence another by efficiently communicate
 one's will or intention.\footnote{
-    Chomsky does not agree: ``\emph{it is wrong to think of human use of language
+    Chomsky does not agree: ``\textit{it is wrong to think of human use of language
     as characteristically informative, in fact or in intention.}''
     \citep{chomsky1968linguistic}.
 } This hints at how language came to be (or may have come to be): (evolution)
 language has evolved to facilitate the exchange of ideas among people (learning)
 humans learn language by being either encouraged or punished for the use of
 language. This latter view on how language came to be is similar in spirit to
-the behaviourism of B. F. Skinner (``\emph{necessary mediation of reinforcement by
+the behaviourism of B. F. Skinner (``\textit{necessary mediation of reinforcement by
 another organism}'' \citep{skinner2014verbal}.)
 
 This is a radical departure from the generative view of human language, where
@@ -431,7 +431,7 @@ language existed on its own and its understanding does not necessarily require
 the existence of the outside world nor the existence of a listener. It is no
 wonder why \citet{chomsky1959review} was so harsh in criticizing Skinner's work.
 This departure, as I see it, is the departure toward a functional view of
-language. \emph{Language is a function of communication}. 
+language. \textit{Language is a function of communication}. 
 
 \subsection{Language Understanding as a Function Approximation}
 
@@ -462,7 +462,7 @@ mechanism of this function? What tools do we have?
 \paragraph{Language Understanding by Machine Learning}
 This functional view of languages suddenly makes machine learning a very
 appealing tool for understanding human languages. After all, function
-approximation is {\em the} core of machine learning. Classification is a
+approximation is \emph{the} core of machine learning. Classification is a
 classical example of function approximation, clustering is a function
 approximation where the target is not given, generative modeling learns a
 function that returns a probability of an input, and so on.
@@ -473,7 +473,7 @@ data. We are given data which was either generated from this function
 on which we adjust our approximation to the function, often iteratively, to best
 fit the data. But, I must note here that it does not matter how well the approximated
 function fits the data it was fitted to, but matters how well this approximation fits
-{\em unseen} data.\footnote{
+\emph{unseen} data.\footnote{
     This is a matter of generalization, and we will talk
     about this more throughout the course.
 }
@@ -571,7 +571,7 @@ we do not care how bad the approximation is, if $p_\text{data}(\vx, \vy)$ is
 small. However, this is a bit difficult to take into account, as we must decided
 on the threshold below which we consider any pair irrelevant.
 
-Hence, we {\em weight} the distance between the approximated $\hat{\vy}$ and the
+Hence, we \emph{weight} the distance between the approximated $\hat{\vy}$ and the
 correct $\vy$ of each pair $(\vx, \vy)$ in the space by its probability $p(\vx,
 \vy)$. Mathematically saying, we want to find 
 \begin{align*}
@@ -582,7 +582,7 @@ where the integral $\int$ should be replaced with the summation $\sum$ if any of
 $\vx$ and $\vy$ is discrete.
 
 We call this quantity being minimized with respect to the parameters $\TT$ a
-cost function $C(\TT)$. This is equivalent to computing the {\em expected}
+cost function $C(\TT)$. This is equivalent to computing the \emph{expected}
 distance between the predicted output $\hat{\vy}$ and the correct one $\vy$:
 \begin{align}
     \label{eq:expected_cost}
@@ -591,7 +591,7 @@ distance between the predicted output $\hat{\vy}$ and the correct one $\vy$:
     =& \E_{(\vx,\vy) \sim p_{\text{data}}}\left[ D(\hat{\vy}, \vy) \right] 
 \end{align}
 This is often called an expected loss or risk, and minimizing this cost function
-is referred to as {\em expected risk minimization} \citep{Vapnik1995}.
+is referred to as \emph{expected risk minimization} \citep{Vapnik1995}.
 
 Unfortunately $C(\TT)$ cannot be (exactly) computed for a number of reasons. The
 most important reason among them is simply that we don't know what the data
@@ -622,18 +622,18 @@ empirical cost function (or empirical risk or empirical loss.)
 Because empirical cost function is readily computable, we will mainly work with
 the empirical cost function not with the expected cost function. However, keep
 in mind that at the end of the day, the goal is to find a set of parameters that
-minimizes the {\em expected} cost.
+minimizes the \emph{expected} cost.
 
 
 \section{Learning as Optimization}
 
 We often call this process of finding a good set of parameters that minimizes
-the expected cost {\em learning}. This term is used from the perspective of a
-machine which implements the function $f_{\TT}$, as it {\em learns} to
+the expected cost \emph{learning}. This term is used from the perspective of a
+machine which implements the function $f_{\TT}$, as it \emph{learns} to
 approximate the true generating function $f$ from training data.
 
 From what I have described so far, it may have become clear even without me
-mentioning that learning is {\em optimization}. We have a clearly defined
+mentioning that learning is \emph{optimization}. We have a clearly defined
 function (the empirical cost function $\tilde{C}$) which needs to be minimized
 with respect to its input $\TT$.
 
@@ -662,14 +662,14 @@ In most cases, because there is no known closed-form solution, it is typical to
 use an iterative optimization algorithm \citep[see][for in-depth
 discussion on optimization.]{Fletcher1987}.
 
-By an {\em iterative} optimization, I mean an algorithm which refines its
+By an \emph{iterative} optimization, I mean an algorithm which refines its
 estimate of the optimal set of parameters little by little until the values of
 the parameters converge to the optimal (expected) cost function. Also, it is
-worthwhile to note that most iterative optimization algorithms are {\em local},
+worthwhile to note that most iterative optimization algorithms are \emph{local},
 in the sense that they do not require us to evaluate the whole parameter space,
 but only a small subset along the path from the starting point to the
 convergence point.\footnote{
-    There are {\em global} optimization algorithms, but they are out of scope
+    There are \emph{global} optimization algorithms, but they are out of scope
     for this course. See, for instance, \citet{Brochu2010} for one such algorithm
     called Bayesian optimization.
 }
@@ -677,15 +677,15 @@ convergence point.\footnote{
 Here I will describe the simplest one among those local iterative optimization
 algorithms, called gradient descent (GD) algorithm. As the name suggests, this
 algorithm depends entirely on the gradient of the cost function.\footnote{
-    From here on, I will use the cost function to refer to the {\em empirical}
+    From here on, I will use the cost function to refer to the \emph{empirical}
     cost function.
 } 
 
 The gradient of a function $\nabla \tilde{C}$ is a vector whose direction points
 to the direction of the greatest rate of increase in the function's value and
 whose magnitude measures this rate. At each point $\TT_t$ in the parameter
-space, the gradient of the cost function $\nabla \tilde{C}(\TT_t)$ is the {\em
-opposite} direction toward which we want to move the parameters. See
+space, the gradient of the cost function $\nabla \tilde{C}(\TT_t)$ is
+the \emph{opposite} direction toward which we want to move the parameters. See
 Fig.~\ref{fig:grad} for graphical illustration.
 
 \begin{figure}
@@ -743,12 +743,13 @@ there are examples in the training set. In other words,
 \end{align*}
 And, $N$ goes up to millions or billions very easily these days.
 
-This enormous computational cost involved in each GD step has motivated the {\em
-stochastic gradient descent} (SGD) algorithm \citep{Robbins1951,Bottou1998}. 
+This enormous computational cost involved in each GD step has
+motivated the \emph{stochastic gradient descent} (SGD) algorithm
+\citep{Robbins1951,Bottou1998}.
 
 First, recall from Eq.~\eqref{eq:empirical_cost} that the cost function we
-minimize is the {\em empirical} cost function $\tilde{C}$ which is the
-sample-based approximation to the {\em expected} cost function $C$. This
+minimize is the \emph{empirical} cost function $\tilde{C}$ which is the
+sample-based approximation to the \emph{expected} cost function $C$. This
 approximation was done by assuming that the training examples were drawn
 randomly from the data distribution $p_{\text{data}}$:
 \begin{align*}
@@ -762,7 +763,7 @@ approximate the expected cost function with a fewer number of training examples:
     D(\hat{\vy^{m}}, \vy^m),
 \end{align*}
 where $M \ll N$ and $\MM$ is the indices of the examples in this much smaller
-subset of the training set. We call this small subset a {\em minibatch}.
+subset of the training set. We call this small subset a \emph{minibatch}.
 
 Similarly, this leads to a minibatch-based estimate of the gradient as well:
 \begin{align*}
@@ -807,7 +808,7 @@ further in the future lectures.
 \label{sec:model_selection}
 
 From here on, I assume that we approximate the ground truth function by
-iteratively refining its set of parameters, in most cases using {\em stochastic
+iteratively refining its set of parameters, in most cases using \emph{stochastic
 gradient descent}. In other words, learning of a machine that approximates the
 true generating function $f$ happens gradually as the machine goes over the
 training examples little by little over time.
@@ -821,8 +822,9 @@ Let us go over again what kind of constraints/issue we have first:
 \end{enumerate}
 
 The most severe issue is that we do not have access to the expected cost
-function which is the one we want to minimize in order to work well with {\em
-any} pair of input $\vx$ and output $\vy$. Instead, we have access to the
+function which is the one we want to minimize in order to work well
+with \emph{any} pair of input $\vx$ and output $\vy$. Instead, we have
+access to the
 empirical cost function which is a finite sample approximation to the expected
 cost function. 
 
@@ -861,7 +863,7 @@ really care.
 \subsection{Early Stopping}
 What should we do? There are many ways to avoid this weird contradiction where
 we want to optimize the cost function well but not too well. Among those, one
-most important trick is {\em early stopping}, which is only applicable when
+most important trick is \emph{early stopping}, which is only applicable when
 iterative optimization is used.
 
 First, we will split the training set $D$ into two partitions $D_{\train}$ and
@@ -893,7 +895,7 @@ decrease, or starts to increase instead of decreasing.
 That's it! It is almost free, as long as the size of the validation set is
 reasonable, since each evaluation is at most as expensive as computing the
 gradient of the empirical cost function. Because of the simplicity and
-effectiveness, this early stopping strategy has become {\em de facto} standard
+effectiveness, this early stopping strategy has become \emph{de facto} standard
 in deep learning and in general machine learning.
 
 The question that needs to be asked here is what the validation cost function
@@ -927,7 +929,7 @@ Rather, it has a more general role in model selection. First, we must talk about
 model selection itself.
 
 This whole procedure of optimization, or learning, can be cast as a process of
-searching for the best {\em hypothesis} over the entire space $\HH$ of
+searching for the best \emph{hypothesis} over the entire space $\HH$ of
 hypotheses.  Here, each hypothesis corresponds to each possible function (with a
 unique set of parameters and a unique functional form) that takes the input
 $\vx$ and output $\vy$. In the case of regression ($\vx \in \RR^d$ and $\vy \in
@@ -945,13 +947,13 @@ so on.
 
 Let us use
 $M \in \HH$ to denote one hypothesis.\footnote{
-    $M$, because each hypothesis corresponds to one learning {\em machine}.
+    $M$, because each hypothesis corresponds to one learning \emph{machine}.
 } One important thing to remember is that the parameter space is only a subset
 of the hypothesis space, because the parameter space is defined by a family of
 hypotheses (the parameter space of a linear function cannot include a set of
 parameters for a second-order polynomial function.)
 
-Given a definition of expected cost function, we can {\em score} each hypothesis
+Given a definition of expected cost function, we can \emph{score} each hypothesis
 $M$ by the corresponding cost $C_M$. Then, the whole goal of function
 approximation boils down to the search for a hypothesis $M$ with the minimal
 expected cost function $C$. But, of course, we do not have access to the
@@ -960,7 +962,7 @@ given training set.
 
 The optimization-based approach we discussed so far searches for the best
 hypothesis based on the empirical cost iteratively. However, because of the
-issue of {\em overfitting} which means that the optimization algorithm overshot
+issue of \emph{overfitting} which means that the optimization algorithm overshot
 and missed the local minimum of the expected cost function (because it was aimed
 at the local minimum of the empirical cost function), I introduced the concept
 of early stopping based on the validation cost.
@@ -981,12 +983,12 @@ Similar to what we've done with early stopping, we can use the validation cost
 to compare these hypotheses. Among those three we choose one that has the
 smallest validation cost $C_{\val}(M)$.
 
-This is one way to do {\em model selection}, and we will talk about another way
+This is one way to do \emph{model selection}, and we will talk about another way
 to do this later.
 
 \section{Evaluation}
 
-But, wait, if this is an argument for using the validation cost to {\em early
+But, wait, if this is an argument for using the validation cost to \emph{early
 stop} the optimization (or learning), one needs to notice something weird. What
 is it?
 
@@ -1000,7 +1002,7 @@ cost.  Once the optimization is done, we need yet another metric to see how well
 the learned function estimate $\hat{f}$ approximates $f$.
 
 Therefore, we need to split the training set not into two partitions but into
-{\em three} partitions. We call them a training set $D_{\train}$, a validation
+\emph{three} partitions. We call them a training set $D_{\train}$, a validation
 set $D_{\val}$ and a test set $D_{\test}$. Consequently, we will have three cost
 functions; a training cost function $C_{\train}$, a validation cost function
 $C_{\val}$ and a test cost function $C_{\test}$, similarly to
@@ -1011,7 +1013,7 @@ models, fairly. Any hypothesis that worked best in terms of the test cost is the
 one that you choose.
 
 \paragraph{Let's not Cheat}
-One most important lesson here is that you {\em must never look at a test set}.
+One most important lesson here is that you \emph{must never look at a test set}.
 As soon as you take a peak at the test set, it will influence your choice in the
 model structure as well as any other hyperparameters biasing toward a better
 test cost. The best option is to never ever look at the test set until it is
@@ -1061,7 +1063,7 @@ First, we are not sure whether the true generating function $f$ was a linear
 function. If it is not, can we expect linear regression to approximate the true
 function well? Of course, not. We will talk about this shortly.
 
-Second, because we were {\em given} $\vx$ (meaning we did not have much control
+Second, because we were \emph{given} $\vx$ (meaning we did not have much control
 over what we want to measure as $\vx$), it is unclear how well $\vx$ represents
 the input. For instance, consider doing a sales forecast of air conditioner at
 one store which opened five years ago. The input $x$ is the number of days since
@@ -1077,7 +1079,7 @@ summer months (around May, June and July.) In other words, if we look at how far
 the month is away from July, we can predict the sales quite well even with 
 linear regression.
 
-Let us call this quantity $\phi(x)$, or equivalent {\em feature}, such that
+Let us call this quantity $\phi(x)$, or equivalent \emph{feature}, such that
 \begin{align}
     \label{eq:feat_month}
     \phi(x) = \left| m(x) - \alpha \right|,
@@ -1091,7 +1093,7 @@ $x$ is.
 
 This whole process of extracting a good set of features that will make our
 choice of parametric function family (such as linear regression in this case) is
-called {\em feature extraction}. This feature extraction is an important step in
+called \emph{feature extraction}. This feature extraction is an important step in
 machine learning and has often been at the core of many applications such as
 computer vision (the representative example is SIFT \citep{lowe1999object}.)
 
@@ -1117,8 +1119,7 @@ business of using manually extracted features futile.
 I have mainly described so far as if the function we approximate or the function
 we use to approximate returns only a constant value, as in one point $\vy$ in
 the output space. This is however not true, and in fact, the function can return
-anything including a {\em
-distribution} \citep{Bridle1990,denker1991transforming,bishop1994mixture}.
+anything including a \emph{distribution} \citep{Bridle1990,denker1991transforming,bishop1994mixture}.
 
 Let's first decompose the data distribution $p_{\data}$ into the product
 of two terms:
@@ -1141,7 +1142,7 @@ have discussed.
 Let us use $\TT(\vx)$ to denote a set of parameters for the probability
 distribution $\tilde{p}(\vy|\vx, \TT(\vx))$ approximating the true, underlying
 probability distribution $p_{\data}(\vy|\vx)$. As the notation suggests, the
-function now returns {\em the parameters of the distribution} $\TT(\vx)$ given
+function now returns \emph{the parameters of the distribution} $\TT(\vx)$ given
 the input $\vx$. 
 
 For example, let's say $\vy \in \left\{ 0, 1\right\}^k$ is a binary vector and
@@ -1207,7 +1208,7 @@ Eq.~\eqref{eq:bernoulli}, the empirical cost function will be
     \tilde{C}(\TT) = -\frac{1}{N} \sum_{n=1}^N 
     \sum_{k'=1}^k y_{k'} \log \mu_{k'} + (1-y_{k'}) \log (1 - \mu_{k'}),
 \end{align*}
-which is often called a {\em cross entropy cost}. In the case of
+which is often called a \emph{cross entropy cost}. In the case of
 Eq.~\eqref{eq:gaussian}, 
 \begin{align}
     \label{eq:kl_gaussian}
@@ -1250,7 +1251,7 @@ $k'$-th dimension of the output is $1$.
         \caption{Is this a duck or a rabbit? \citep{kuhn2012structure} At the end
         of the day, we want our function $f$ to return a conditional
     distribution saying that $p(\text{duck}|\vx) = p(\text{rabbit}|\vx)$,
-instead of returning {\em the} answer out of these two possible answers.}
+instead of returning \emph{the} answer out of these two possible answers.}
         \label{fig:duck_rabbit}
     \end{minipage}
 \end{figure}
@@ -1292,7 +1293,7 @@ It is clear that in this case, the function $f$ returns $K$ values $\left\{
 \mu_1, \mu_2, \ldots, \mu_K \right\}$, each of which is between $0$ and $1$.
 Furthermore, the sum of $\mu_k$'s must sum to $1$. This can be achieved easily
 by letting $f$ to compute affine transformation of $x$ (or $\phi(x)$) to return
-$K$ (unbounded) real values followed by a so called {\em softmax}
+$K$ (unbounded) real values followed by a so called \emph{softmax}
 function \citep{Bridle1990}:
 \begin{align}
     \label{eq:softmax}
@@ -1329,7 +1330,7 @@ design features. This raises a question: instead of manually designing features
 ourselves, is it possible for this to happen automatically?
 
 One thing we notice is that the feature extraction process $\phi(\vx)$ is
-nothing but a {\em function}. A function of a function is a function, right? In
+nothing but a \emph{function}. A function of a function is a function, right? In
 other words, we will extend our definition of the function to include the
 feature extraction function:
 \begin{align*}
@@ -1368,7 +1369,7 @@ nonlinearity such as $\tanh$.\footnote{
 }
 
 One interesting thing is that if the dimensionality of the transformed feature
-vector $\phi_0(\vx)$ is {\em much} larger than that of $\vx$, the function
+vector $\phi_0(\vx)$ is \emph{much} larger than that of $\vx$, the function
 $f(\phi_0(\vx))$ can approximate any function from $\vx$ to $\vy$ under some
 assumptions, even when the parameters $\mW_0$ and $\vb_0$ are randomly
 selected! \citep{Cover1965} 
@@ -1379,8 +1380,8 @@ We don't even need to touch $\mW_0$ and $\vb_0$. All we need to do is replace
 the input $\vx^n$ of all the pairs in the training set to $\phi_0(\vx^n)$.
 
 In fact, there is a group of researchers claiming to have figured this out by
-themselves less than a decade ago (as of 2015) who call this model an {\em
-extreme learning machine} \citep{Huang2006}. There have been some debates about
+themselves less than a decade ago (as of 2015) who call this model an
+\emph{extreme learning machine} \citep{Huang2006}. There have been some debates about
 this so-called extreme learning machine. Here I will not make any comment
 myself, but would be a good exercise for you to figure out why there has been
 debates about this.
@@ -1395,7 +1396,7 @@ What we want is to fully tune the whole thing.
 \label{sec:mlp}
 
 The basic idea of multilayer perceptron is to stack a large number of those
-feature extraction {\em layers} in Eq.~\eqref{eq:layer} between the input and
+feature extraction \emph{layers} in Eq.~\eqref{eq:layer} between the input and
 the output. This idea is as old as the whole field of neural network research,
 dating back to early 1960s \citep{Rosenblatt1962}. However, it took many more
 years for people to figure out a way to tune the whole network, both $f$ and
@@ -1464,7 +1465,7 @@ which is a simple application of chain rule of derivatives. Compare this to
 In both equations, $\underline{\mu} = w \phi(x) + b$ which is the input to $f$.
 
 
-Both of these derivatives {\em share} $\frac{\partial C_x}{\partial
+Both of these derivatives \emph{share} $\frac{\partial C_x}{\partial
 \mu}\frac{\partial \mu}{\partial \underline{\mu}}$, where
 \begin{align}
     \label{eq:out_deriv}
@@ -1541,7 +1542,7 @@ Now all the ingredients are there:
 
 The most important lession to learn from here is that most of the computations
 needed to get the derivatives in this seemingly complicated multilayered
-computational graph (multilayer perceptron) are {\em shared}. At the end of the
+computational graph (multilayer perceptron) are \emph{shared}. At the end of the
 day, the amount of computation needed to compute the gradient of the cost
 function w.r.t. all the parameters in the network is only as expensive as
 computing the cost function itself.
@@ -1637,7 +1638,7 @@ the whole derivative w.r.t. $U$:
     \frac{\partial C_y}{\partial U} = (\mu - y) (w \odot \diag(\phi'(x)))
     x^\top.
 \end{align*}
-Note that all the vectors in this lecture note are {\em column} vectors.
+Note that all the vectors in this lecture note are \emph{column} vectors.
 
 For $c$, it's straightforward, since 
 \begin{align*}
@@ -1648,10 +1649,10 @@ For $c$, it's straightforward, since
 \section{Automating Backpropagation}
 \label{sec:autodiff}
 
-This procedure, presented as two examples, is called a {\em backpropagation}
+This procedure, presented as two examples, is called a \emph{backpropagation}
 algorithm. If you read textbooks on neural networks, you see a fancier way to
 explain this backpropagation algorithm by introducing a lot of fancy terms such
-as {\em local error} $\delta$ and so on. But, personally I find it much easier
+as \emph{local error} $\delta$ and so on. But, personally I find it much easier
 to understand backpropagation as a clever application of the chain rule of
 derivatives to a directed acyclic graph (DAG) in which each node computes a certain
 function $\phi$ using the output of the previous nodes. I will refer to this
@@ -1699,7 +1700,7 @@ backpropagation algorithm. We start from the last code, $C_y$, by computing
 $\frac{\partial C_y}{\partial y}$ and $\frac{\partial C_y}{\partial \sigma^1}$.
 Then, the function node $\sigma^1$ will compute its own derivative
 $\frac{\partial \sigma^1}{\partial \text{MatSum}^1}$ and multiply it with
-$\frac{\partial C_y}{\partial \sigma^1}$ passed {\em back} from the function
+$\frac{\partial C_y}{\partial \sigma^1}$ passed \emph{back} from the function
 node $C_y$. So far we've computed
 \begin{align}
     \label{eq:dC_dMS1}
@@ -1721,8 +1722,7 @@ cost function $C_y$ w.r.t. one of the parameters $b$:
 
 This process continues mechanically until the very beginning of the graph (a set
 of root variable nodes) is reached. All we need in this process of
-backpropagating the derivatives is that each function node implements both {\em
-forward computation} as well as {\em backward computation}. In the backward
+backpropagating the derivatives is that each function node implements both \emph{forward computation} as well as \emph{backward computation}. In the backward
 computation, the function node received the derivative from the next function
 node, evaluates its own derivative with respect to the inputs (at the point of
 the forward activation) and passes theses
@@ -1751,11 +1751,11 @@ Before finishing this discussion on automating backpropagation, I'd like you to
 think of pushing this even further. For instance, you can think of each function
 node returning not its numerical derivative on its backward pass, but a
 computational sub-graph computing its derivative. This means that it will return
-a {\em computational graph of gradient}, where the output is the derivatives of
+a \emph{computational graph of gradient}, where the output is the derivatives of
 all the variable nodes (or a subset of them.) Then, we can use the same facility
 to compute the second-order derivatives, right? 
 
-\subsection{What if a Function is {\em not} Differentiable?}
+\subsection{What if a Function is \emph{not} Differentiable?}
 \label{sec:nonlinearities}
 
 From the description so far, one thing we notice is that backpropagation works
@@ -1873,7 +1873,7 @@ general answer to them.
 %single time. 
 %and extensions of
 %simple multilayer perceptrons, such as convolutional neural networks which have
-%become {\em the} standard in solving many challenging computer vision and speech
+%become \emph{the} standard in solving many challenging computer vision and speech
 %tasks. 
 
 \section{Recurrent Neural Networks}
@@ -1887,8 +1887,8 @@ either a scalar or a vector of the fixed number of dimensions. From here on
 however, we remove this assumption of a fixed size input and consider the case
 of having a variable length input $x$. 
 
-What do I mean by a {\em variable length input}? A variable length input $x$ is
-a {\em sequence} where each input $x$ has a different number of elements. For
+What do I mean by a \emph{variable length input}? A variable length input $x$ is
+a \emph{sequence} where each input $x$ has a different number of elements. For
 instance, the first training example's input $x^1$ may consist of $l^1$ elements
 such that
 \begin{align*}
@@ -1935,10 +1935,10 @@ the input $x$, as in Alg.~\ref{alg:sum}.
 
 There are two important components in this implementation. First, there is a
 memory $s$ which counts the number of $1$'s in the input sequence $x$. Second,
-a single function {\sc add1} is applied to each symbol in the sequence {\em one
+a single function {\sc add1} is applied to each symbol in the sequence \emph{one
 at a time} together with the memory $s$. Thanks to these two properties, our
 implementation of the function {\sc add1} can be used with the input sequence of
-{\em any length}.
+\emph{any length}.
 
 Now let us generalize this idea of having a memory and a recursive function that
 works over a variable length sequence. One likely most general case of this idea
@@ -1953,16 +1953,16 @@ registers work as a memory in this case ($s$ from Alg.~\ref{alg:sum},) and the
 execution of an instruction by the CPU corresponds to a recursive function
 ({\sc add1} from Alg.~\ref{alg:add1}.)
 
-Both {\sc add1} and CPU are {\em hard coded} in the sense that they do what they
+Both {\sc add1} and CPU are \emph{hard coded} in the sense that they do what they
 have been designed and manufactured to do. Clearly, this is not what we want,
 because nobody knows how to design a CPU or a recursive function for natural
 language understanding, which is our ultimate goal. Instead what we want is to
 have a parametric recursive function that is able to read a sequence of
-(linguistic) symbols and use a memory in order to {\em understand natural
+(linguistic) symbols and use a memory in order to \emph{understand natural
 languages}.
 
 To build this parametric recursive function\footnote{
-    In neural network research, we call this function a {\em recurrent neural
+    In neural network research, we call this function a \emph{recurrent neural
     network.}
 }
 that works on a variable-length
@@ -1970,7 +1970,7 @@ input sequence $x=(x_1, x_2, \ldots, x_l)$, we now know that there needs to be a
 memory. We will use one vector $\vh \in \RR^{d_h}$ as this memory vector. As is
 clear from Alg.~\ref{alg:add1}, this recursive function takes as input both one
 input symbol $x_t$ and the memory vector $\vh$, and it returns the updated memory
-vector. It often helps to {\em time index} the memory vector as well, such that
+vector. It often helps to \emph{time index} the memory vector as well, such that
 the input to this function is $\vh_{t-1}$ (the memory after processing the
 previous symbol $x_{t-1}$,) and we use $\vh_t$ to denote the memory vector
 returned by the function. This function is then
@@ -1995,7 +1995,7 @@ is an element-wise nonlinear function such as $\tanh$.
 \label{sec:rnn_fixed_y}
 
 Because our goal is to approximate an underlying, true function, we now need to
-think of how we use this recursive function to {\em return} an output $y$. As
+think of how we use this recursive function to \emph{return} an output $y$. As
 with the case of variable-length sequence input $x$, $y$ can only be either a
 fixed-size output, such as a category to which the input $x$ belongs, or a
 variable-length sequence output. Here let us discuss the case of having a
@@ -2028,7 +2028,7 @@ vector.
 
 The main difference is that the input is not given only to the first simple
 transformation layer, but is given to all those transformation layers (one at a
-time.) Also, each transformation layer {\em shares} the parameters $\mW$ and
+time.) Also, each transformation layer \emph{shares} the parameters $\mW$ and
 $\mU$.\footnote{
     Note that for brevity, I have omitted bias vectors. This should not matter
     much, as having a bias vector is equivalent to augmenting the input with a
@@ -2038,7 +2038,7 @@ $\mU$.\footnote{
     \left[ \begin{array}{c} \vx \\1 \end{array} \right]
         = \mW \vx + \vb
     \end{align*}
-    Note that as I have declared before all vectors are {\em column} vectors.
+    Note that as I have declared before all vectors are \emph{column} vectors.
 } The first two steps of the recurrence part (a) of Eq.~\eqref{eq:rnn_unrolled}
 are shown as a computational graph in Fig.~\ref{fig:rec_unrolled}.
 
@@ -2093,8 +2093,8 @@ From these two cases, we can see that in general
     \frac{\partial g}{\partial f_i}
     \frac{\partial f_i}{\partial x}.
 \end{align*}
-This means that when multiple derivatives are {\em backpropagated} into a single
-node, the node should first {\em sum them} and multiply its summed derivative
+This means that when multiple derivatives are \emph{backpropagated} into a single
+node, the node should first \emph{sum them} and multiply its summed derivative
 with its own derivative.
 
 What does this mean for the shared parameters of the recurrent neural network?
@@ -2145,7 +2145,7 @@ backward.
 
 \subsection{Example: Sentiment Analysis}
 
-There is a task in natural language processing called {\em sentiment analysis}.
+There is a task in natural language processing called \emph{sentiment analysis}.
 As the name suggests, the goal of this task is to predict the sentiment of a
 given text. This is definitely one function that a human can do fairly well:
 when you read a critique's review of a movie, you can easily tell whether the
@@ -2155,7 +2155,7 @@ by reading her/his review of the product.
 
 In this task, an input sequence $x$ is a given text, and the fixed-size output
 is its label which is almost always one of positive, negative or neutral. Let us
-assume for now that the input is a {\em sequence of words}, where each word
+assume for now that the input is a \emph{sequence of words}, where each word
 $\vx_i$ is represented as a so-called one-hot vector.\footnote{
     A one-hot vector is a way to represent a discrete symbol as a binary vector.
     The one-hot vector $\vv_i$ of a symbol $i \in V = \left\{ 1, 2, \ldots, |V|
@@ -2173,7 +2173,7 @@ in Eq.~\eqref{eq:rnn_layer}.
 
 Once the input sequence, or paragraph in this specific example, is read, we get
 the last memory state $\vh_l$ of the recurrent neural network. We will
-affine-transform $\vh_l$ followed by the {\em softmax} function to obtain the
+affine-transform $\vh_l$ followed by the \emph{softmax} function to obtain the
 conditional distribution of the output $y \in \left\{ 1, 2, 3 \right\}$ ($1$:
 positive, $2$: neutral and $3$: negative):
 \begin{align}
@@ -2212,8 +2212,8 @@ perhaps the least interesting problem of all time in natural language
 understanding, but perhaps the most well suited problem for this section.
 
 In its simplest form, we can view this problem of POS tagging as classifying
-each word in a sentence as one of {\em noun}, {\em verb}, {\em adjective} and
-{\em others}. As an example, given the following input sentence $x$
+each word in a sentence as one of \emph{noun}, \emph{verb}, \emph{adjective} and
+\emph{others}. As an example, given the following input sentence $x$
 \begin{align*}
     x = (\text{Children}, \text{eat}, \text{sweet}, \text{candy}),
 \end{align*}
@@ -2225,7 +2225,7 @@ the goal is to output
 This task can be solved by a recurrent neural network from the preceding section
 (Sec.~\ref{sec:rnn_fixed_y}) after a quite trivial modification. Instead of
 waiting until the end of the sentence to get the last memory state of the
-recurrent neural network, we will use the {\em immediate memory state} to
+recurrent neural network, we will use the \emph{immediate memory state} to
 predict the label at each time step $t$. 
 
 At each time $t$, we get the immediate memory state $\vh_t$ by
@@ -2246,8 +2246,8 @@ This can be done by
 Four $\mu_{t,i}$'s correspond to the probabilities of the four categories; (1)
 noun, (2) verb, (3) adjective and (4) others.
 
-From this output distribution at time step $t$, we can define a {\em per-step},
-{\em per-sample} cost function:
+From this output distribution at time step $t$, we can define a \emph{per-step},
+\emph{per-sample} cost function:
 \begin{align}
     \label{eq:cost_per_step}
     C_{x,t}(\TT) = -\log \sum_{k=1}^K \II_{k=y} \mu_{t,k},
@@ -2275,7 +2275,7 @@ This means that the network is predicting the label of the $t$-th input symbol
 using only the input symbols read up to that point (i.e., $x_1, x_2, \ldots,
 x_t$.)
 
-In other words, this means that the recurrent neural network is {\em not} taking
+In other words, this means that the recurrent neural network is \emph{not} taking
 into account the structure of the output sequence. For instance, even without
 looking at the input sequence, in English it is well known that the probability
 of the next word being a noun increases if the current word is an
@@ -2346,8 +2346,8 @@ value for $y_{t-1}$'s.
 It is however not clear what we should do when we test the trained network,
 because then we are not given the groundtruth output sequence. This process of
 finding an output that maximizes the conditional (log-)probability is called
-{\em inference}\footnote{
-    Okay, I confess. The term {\em inference} refers to a much larger class of
+\emph{inference}\footnote{
+    Okay, I confess. The term \emph{inference} refers to a much larger class of
     problems, even if we consider only machine learning. However, let me simply
     use this term to refer to a task of finding the most likely output of a
     function.
@@ -2378,18 +2378,18 @@ last output symbol $\hat{y}_l$ is selected.
 
 This is greedy in the sense that any early choice with a high conditional
 probability may turn out to be unlikely one due to extremely low conditional
-probabilities later on. It is highly related to the so-called {\em garden path
+probabilities later on. It is highly related to the so-called \emph{garden path
 sentence} problem. To know more about this, read, for instance,
 \citet[][Sec.~3.2.4]{manning1999foundations}.
 
 It is possible to alleviate this issue by considering $N<K$ best hypotheses of
-the output sequence at each time step. This procedure is called {\em beam
+the output sequence at each time step. This procedure is called \emph{beam
 search}, and we will discuss more about this in a later lecture on neural
 machine translation.
 
 \section{Gated Recurrent Units}
 
-\subsection{Making Simple Recurrent Neural Networks {\em Realistic}}
+\subsection{Making Simple Recurrent Neural Networks \emph{Realistic}}
 
 Let us get back to the analogy we made in Sec.~\ref{sec:rnn}. We compared a
 recurrent neural network to how CPU works. Executing a recurrent function $f$ is
@@ -2403,7 +2403,7 @@ but rather I'm talking at the conceptual level. What is it at the conceptual
 level that makes the simple recurrent neural network unrealistic?
 
 An important observation we make about the simple recurrent neural network is
-that it {\em refreshes} the whole memory state at each time step. This is almost
+that it \emph{refreshes} the whole memory state at each time step. This is almost
 opposite to how the registers on a CPU are maintained. Each time an instruction
 is executed, the CPU does not clear up the whole registers and repopulate them.
 Rather, it works only on a small number of registers. All the other registers'
@@ -2422,7 +2422,7 @@ This can be written down as a binary vector $\vu \in \left\{ 0, 1\right\}^{n_h}$
         \right.
 \end{align*}
 
-With this binary vector, which I will call an {\em update gate}, a new memory
+With this binary vector, which I will call an \emph{update gate}, a new memory
 state or a new register value at time $t$ can be computed as a convex
 interpolation such that
 \begin{align}
@@ -2438,7 +2438,7 @@ execution considers the whole registers. It is almost impossible to imagine
 designing an instruction on a CPU that requires to read the values of all the
 registers. Instead, what almost always happens is that each instruction will
 consider only a small subset of the registers, which again we can use a binary
-vector to represent. Let me call it a {\em reset gate} $\vr \in \left\{ 0,
+vector to represent. Let me call it a \emph{reset gate} $\vr \in \left\{ 0,
 1\right\}^{n_h}$:
 \begin{align*}
     r_i = \left\{ 
@@ -2449,9 +2449,9 @@ vector to represent. Let me call it a {\em reset gate} $\vr \in \left\{ 0,
         \right.
 \end{align*}
 
-This reset gate can be multiplied to the register values {\em before} being used
+This reset gate can be multiplied to the register values \emph{before} being used
 by the instruction at time $t$.\footnote{
-    It is important to note that this is {\em not} resetting the actual values
+    It is important to note that this is \emph{not} resetting the actual values
     of the registers, but only the input to the instruction/recursive function.
 } If we use a recursive function $f$ from Eq.~\eqref{eq:rnn_layer}, it means that
 \begin{align} 
@@ -2461,8 +2461,7 @@ by the instruction at time $t$.\footnote{
 \end{align}
 
 Now, let us put these two gates that are necessary to make the simple recurrent
-neural network more realistic into one piece. At each time step, the {\em
-candidate} memory state is computed based on a subset of the elements of the
+neural network more realistic into one piece. At each time step, the \emph{candidate} memory state is computed based on a subset of the elements of the
 previous memory state:
 \begin{align*}
     \tilde{\vh}_t = g(\mW \phi(x_t) + \mU (\vr \odot \vh_{t-1}))
@@ -2493,14 +2492,13 @@ See Fig.~\ref{fig:gru} for the graphical illustration.
 \subsection{Gated Recurrent Units}
 \label{sec:gru}
 
-Now here goes a big question: {\em How are the update $\vu$ and reset $\vr$
+Now here goes a big question: \emph{How are the update $\vu$ and reset $\vr$
 gates computed?}
 
-If we stick to our analogy to the CPU, those gates must be pre-configured {\em
-per instruction}. Those binary gates are dependent on the instruction. Again
+If we stick to our analogy to the CPU, those gates must be pre-configured \emph{per instruction}. Those binary gates are dependent on the instruction. Again
 however, this is not what we want to do in our case. There is no set of
 predefined instructions, but the execution of any instruction corresponds to
-computing a recurrent {\em function} based on the input symbol and the memory
+computing a recurrent \emph{function} based on the input symbol and the memory
 state from the previous time step (see, e.g., Eq.~\eqref{eq:rnn_layer}.)
 Similarly to this what we want with the update and reset gates is that they are
 computed by a function which depends on the input symbol and the previous memory
@@ -2513,7 +2511,7 @@ everywhere, except at the point where a sharp transition from $0$ to $1$
 happens. We discussed the consequence of having an activation function with zero
 derivative almost everywhere in Sec.~\ref{sec:nonlinearities}, and the
 conclusion was that it becomes very difficult to compute the gradient of the
-cost function efficiently {\em and} exactly with these discrete activation
+cost function efficiently \emph{and} exactly with these discrete activation
 functions in a computational graph.
 
 One simple solution which turned out to be extremely efficient is to consider
@@ -2522,15 +2520,15 @@ other words, we redefine the update and reset gates to be
 \begin{align*}
     \vu \in \left[ 0, 1 \right]^{n_h}, \vr \in \left[ 0, 1\right]^{n_h}.
 \end{align*}
-This approach makes these gates {\em leaky} in the sense that they always allow
+This approach makes these gates \emph{leaky} in the sense that they always allow
 some leak of information through the gate.
 
 In the case of the reset gate, rather than making a hard decision on which
 subset of the registers, or the elements of the memory state, will be used, it
-now decides {\em how much} information from the previous memory state will be
+now decides \emph{how much} information from the previous memory state will be
 used. The update gate on the other hand now controls how much content in the
 memory state will be replaced, which is equivalent to saying that it controls
-how much information will be {\em kept} from the previous memory state.
+how much information will be \emph{kept} from the previous memory state.
 
 Under this definition we can simply use a sigmoid function from
 Eq.~\eqref{eq:sigmoid} to compute these gates:
@@ -2540,7 +2538,7 @@ Eq.~\eqref{eq:sigmoid} to compute these gates:
 \end{align*}
 where $\mW_r$, $\mU_r$, $\mW_u$ and $\mU_u$ are the additional
 parameters.\footnote{
-    Note that this is not {\em the} formulation available for computing the
+    Note that this is not \emph{the} formulation available for computing the
     reset and update gates. For instance, one can use the following definitions
     of the reset and update gates:
     \begin{align*}
@@ -2559,7 +2557,7 @@ derivatives of the cost function with respect to these parameters and estimate
 them together with all the other parameters.
 
 We call this recurrent activation function with the reset and update gates a
-{\em gated recurrent unit} (GRU), and a recurrent neural network having this GRU
+\emph{gated recurrent unit} (GRU), and a recurrent neural network having this GRU
 as a gated recurrent network.
 
 \subsection{Long Short-Term Memory}
@@ -2577,13 +2575,13 @@ network.
 
 Unlike the element-wise nonlinearity of the simple recurrent neural network and
 the gated recurrent unit, the LSTM explicitly separates the memory state $\vc_t$
-and the output $\vh_t$. The output is a small subset of the {\em hidden} memory
-state, and only this subset of the memory state is visibly {\em exposed} to any
+and the output $\vh_t$. The output is a small subset of the \emph{hidden} memory
+state, and only this subset of the memory state is visibly \emph{exposed} to any
 other part of the whole network. 
 
 How does a recurrent neural network with LSTM units decide how much of the
 memory state it will reveal?  As perhaps obvious at this point, the LSTM uses a
-so-called {\em output} gate $\vo$ to achieve this goal. Similarly to the reset
+so-called \emph{output} gate $\vo$ to achieve this goal. Similarly to the reset
 and update gates of the GRU, the output gate is computed by
 \begin{align*}
     \vo = \sigmoid(\mW_o \phi(x_t) + \mU_o \vh_{t-1}).
@@ -2604,9 +2602,9 @@ where $\vf \in \RR^{n_h}$, $\vi \in \RR^{n_h}$ and $\tilde{\vc}_t$ are the
 forget gate, input gate and the candidate memory state, respectively.
 
 The roles of those two gates are quite clear from their names. The forget gate
-decides how much information from the memory state will be {\em forgotten},
+decides how much information from the memory state will be \emph{forgotten},
 while the input gate controls how much information about the new input
-(consisting of the input symbol and the previous output) will be {\em inputted}
+(consisting of the input symbol and the previous output) will be \emph{inputted}
 to the memory. They are computed by
 \begin{align}
     \label{eq:lstm_forget}
@@ -2648,7 +2646,7 @@ read \citet{greff2015lstm,jozefowicz2015empirical}.\footnote{
 \subsection{Rectifiers Explode}
 \label{sec:rect_explode}
 
-Let us go back to the {\em simple recurrent neural network} which uses the
+Let us go back to the \emph{simple recurrent neural network} which uses the
 simple transformation layer from Eq.~\eqref{eq:rnn_layer}:
 \begin{align*}
     f(x_t, \vh_{t-1}) = g(\mW \phi(x_t) + \mU \vh_{t-1}),
@@ -2756,14 +2754,14 @@ and
 where $\odot$ is an element-wise product.
 
 What happens if the largest eigenvalue $e_{\max} = \max \diag(\mS)$ is larger
-than $1$, the norm of $\vh_l$ will {\em explode}, i.e., $\|\vh_l\| \to \infty$.
+than $1$, the norm of $\vh_l$ will \emph{explode}, i.e., $\|\vh_l\| \to \infty$.
 Furthermore, due to the assumption that $\mW\phi(x_{t'}) > 0$, each element of
 $\vh_l$ will explode to infinity as well. The rate of growth is exponentially
 with respect to  the length of the input sequence, meaning that even when the
 input sequence is not too long, the norm of the memory state grows quickly if
 $e_{\max}$ is reasonably larger than $1$. 
 
-This happens, because the nonlinearity $g$ is {\em unbounded}. If $g$ is bounded
+This happens, because the nonlinearity $g$ is \emph{unbounded}. If $g$ is bounded
 from both above and below, such as the case with $\tanh$, the norm of the memory
 state is also bounded. In the case of $\tanh:\RR \to \left[ -1, 1\right]$,
 \begin{align*}
@@ -2777,15 +2775,15 @@ functions.\footnote{
     recurrent neural networks. See, for instance,
     \citet{le2015simple,bengio2013advances}.
 } I will call this recurrent neural network with $\tanh$ as an element-wise
-nonlinear function a {\em simple recurrent neural network}. 
+nonlinear function a \emph{simple recurrent neural network}. 
 
 \subsection{Is $\tanh$ a Blessing?}
 \label{sec:vanishing_grad}
 
 Now, the argument in the previous section may sound like $\tanh$ and $\sigmoid$
-are {\em the} nonlinear functions that one should use. This seems quite
+are \emph{the} nonlinear functions that one should use. This seems quite
 convincing for recurrent neural networks, and perhaps so for feedforward neural
-networks as well, if the network is {\em deep} enough.
+networks as well, if the network is \emph{deep} enough.
 
 Here let me try to convince you otherwise by looking at how the norm of
 backpropagated derivative behaves. Again, this is much easier to see if we
@@ -2872,7 +2870,7 @@ The derivatives of the widely used logistic functions are
     \tanh'(x) =& 1 - \tanh^2(x),
 \end{align*}
 as described earlier in Sec.~\ref{sec:nonlinearities}. 
-Both of these functions' derivatives are {\em bounded}:
+Both of these functions' derivatives are \emph{bounded}:
 \begin{align}
     \label{eq:sigmoid_bound}
     &0 < \sigma'(x) \leq 0.25, \\
@@ -2923,10 +2921,10 @@ which according to Sec.~\ref{sec:rect_explode}, will explode as $l\to\infty$ if
     e_{\max} > 1,
 \end{align*}
 where $e_{\max}$ is the largest eigenvalue of $\mU$. When $e_{\max} < 1$, it
-will {\em vanish}, i.e., $\|\frac{\partial \vh_{l_1}}{\partial \vh_{l_0+1}}\|
+will \emph{vanish}, i.e., $\|\frac{\partial \vh_{l_1}}{\partial \vh_{l_0+1}}\|
 \to 0$, exponentially fast.
 
-What if the recurrent activation function $f$ is {\em not} linear at all? Let's
+What if the recurrent activation function $f$ is \emph{not} linear at all? Let's
 look at $\frac{\partial \vh_{t}}{\partial \underline{\vh}_{t}} \mU$ as 
 \begin{align*}
     \frac{\partial \vh_{t}}{\partial \underline{\vh}_{t}} \mU = 
@@ -2962,12 +2960,12 @@ where $\lambda$ is the upperbound on $g'=\frac{\partial \vh_{t}}{\partial
 for the upperbounds of the sigmoid and hyperbolic tangent functions.
 
 In other words, if the largest eigenvalue of $\mU$ is larger than
-$\frac{1}{\lambda}$, it is {\em likely} that this temporal derivative of
-$\vh_{l_1}$ with respect to $\vh_{l_0+1}$ will {\em explode}, meaning that its
+$\frac{1}{\lambda}$, it is \emph{likely} that this temporal derivative of
+$\vh_{l_1}$ with respect to $\vh_{l_0+1}$ will \emph{explode}, meaning that its
 norm will grow exponentially large. In the opposite case of $e_{\max} <
 \frac{1}{\lambda}$, the norm of the temporal derivative likely shrinks toward
-$0$. The former case is referred to as {\em exploding gradient}, and the latter
-{\em vanishing gradient}. These cases were studied already at the very early
+$0$. The former case is referred to as \emph{exploding gradient}, and the latter
+\emph{vanishing gradient}. These cases were studied already at the very early
 years of research in recurrent neural
 networks \citep{bengio1994learning,hochreiter2001gradient}.
 
@@ -3003,7 +3001,7 @@ In mathematics,
 where we used the shorthand notiation $\nabla$ for $\nabla_{\TT} \tilde{C}$.
 $\tilde{\nabla}$ is a rescaled gradient update direction which will be used by
 the stochastic gradient descent (SGD) algorithm from Sec.~\ref{sec:sgd}. This
-algorithm is referred to as {\em gradient clipping}
+algorithm is referred to as \emph{gradient clipping}
 \citep{pascanu2013difficulty}.
 
 \paragraph{Vanishing Gradient}
@@ -3045,10 +3043,10 @@ $t$-th output probability with respect to the change in the value of the $t'$-th
 input. 
 
 In other words $\frac{\partial \log p(y_t=y_t^*|\ldots)}{\partial \phi(x_{t'})}$
-directly reflects the degree to which the $t$-th output $y_t$ {\em depends} on
-the $t'$-th input $x_{t'}$, {\em according to the network}.  To put it in
+directly reflects the degree to which the $t$-th output $y_t$ \emph{depends} on
+the $t'$-th input $x_{t'}$, \emph{according to the network}.  To put it in
 another way, $\frac{\partial \log p(y_t=y_t^*|\ldots)}{\partial\phi(x_{t'})}$
-reflects how much dependency the {\em recurrent neural network has captured the
+reflects how much dependency the \emph{recurrent neural network has captured the
 dependency between $y_t$ and $x_{t'}$}.
 
 Let's rewrite 
@@ -3062,7 +3060,7 @@ Let's rewrite
     \frac{\partial \vh_{t'}}{\partial \phi(x_t)}.
 \end{align*}
 The terms marked with (a) looks exactly identical to Eq.~\eqref{eq:tderiv}. We
-have already seen that this term can easily {\em vanish} toward zero with a high
+have already seen that this term can easily \emph{vanish} toward zero with a high
 probability (see Sec.~\ref{sec:vanishing_grad}.)
 
 This means that the recurrent neural network is unlikely to capture this
@@ -3087,7 +3085,7 @@ function:
 \end{align*}
 This term, which was introduced in \citet{pascanu2013difficulty}, is minimized
 when the norm of the derivative does not change as it is being backpropagated,
-effectively forcing the gradient {\em not} to vanish.
+effectively forcing the gradient \emph{not} to vanish.
 
 This term however was found to help significantly only when the target task, or
 the underlying function, does indeed exhibit long-term dependencies. How can we
@@ -3135,7 +3133,7 @@ Let's be more specific and see what happens to this with respect to $x_{t'}$:
 \end{align}
 where $\prod$ is for element-wise multiplication.
 
-What this implies is that the GRU effectively introduces a {\em shortcut} from
+What this implies is that the GRU effectively introduces a \emph{shortcut} from
 time $t'$ to $t$. The change in $x_{t'}$ will directly influence the value of
 $\vh_t$, and subsequently the $t$-th output symbol $y_t$. In other words, all
 the issue with the simple recurrent neural network we discussed earlier in
@@ -3150,9 +3148,9 @@ inevitably run into an issue. Why is this so?
 Let's say we are sure that there are many long-term dependencies in the data.
 It is natural to choose a large coefficient for the leaky integration unit,
 meaning the update gate is close to $1$. This will definitely help carrying the
-dependency across many time steps, but this inevitably carries {\em unnecessary}
+dependency across many time steps, but this inevitably carries \emph{unnecessary}
 information as well. This means that much of the representational power of the
-output function $g_{\text{out}}(\vh_t)$ is wasted in {\em ignoring} those
+output function $g_{\text{out}}(\vh_t)$ is wasted in \emph{ignoring} those
 unnecessary information.
 
 If the update gate is fixed to something substantially smaller than $1$, all the
@@ -3162,7 +3160,7 @@ words, it does not really help to have a leaky integration unit in the place of
 a simple $\tanh$ unit.
 
 This is however not the case with the actual GRU or LSTM, because those update
-gates are {\em not} fixed but are adaptive with respect to the input. If the
+gates are \emph{not} fixed but are adaptive with respect to the input. If the
 network detects that there is an important dependency being captured, the update
 gate will be closed ($u_j \approx 0$.) This will effectively strengthen the
 shortcut connection (see Eq.~\eqref{eq:gru_expand} (a).) When the network
@@ -3189,9 +3187,9 @@ equivalent questions that are at the core of this course.
 One of the most basic capability of a machine that can signal us that it indeed
 understands natural language is for the machine to tell how likely a given
 sentence is. Of course, this is extremely ill-defined, as we probably cannot
-define the {\em likeliness} of a sentence, because there are many different
+define the \emph{likeliness} of a sentence, because there are many different
 types of unlikeliness. For instance, a sentence ``Colorless green ideas sleep
-furiously'' from \citet{chomsky2002syntactic} is {\em unlikely}
+furiously'' from \citet{chomsky2002syntactic} is \emph{unlikely}
 according to our common sense, because 
 \begin{enumerate}
     \itemsep 0em
@@ -3220,7 +3218,7 @@ As we discussed in the first lecture of the course, we are more interested in
 approaching natural language as a means for one to communicate ideas to a
 listener. In this sense, language use is a function which takes as input the
 surrounding environment, including the others' speech, and returns linguistic
-response, and this function is {\em not} given but learned via observing others'
+response, and this function is \emph{not} given but learned via observing others'
 use of language and the reinforcement by the surrounding
 environment \citep{skinner2014verbal}. Also, throughout this course, we are not
 concerned too much about the existing syntactic, or grammatical, structures
@@ -3239,7 +3237,7 @@ a natural language sentence.
 Of course, as we discussed earlier in Sec.~\ref{sec:wrong_route} and in this
 section, not everyone agrees.  This is due to the fact that a perfect
 grammatical sentence may be considered unlikely, just because it does not happen
-often. In other words, statistical approaches to {\em language modeling} may
+often. In other words, statistical approaches to \emph{language modeling} may
 conclude that a sentence with perfectly valid grammatical construction is
 unlikely. Is this a problem? 
 
@@ -3316,7 +3314,7 @@ follows, and we have briefly discussed about this at the very beginning of this
 course. Second, it is quite well known that most of the formalisms do indeed
 have uncertainty in inference. Again, we looked at one particular example in
 Sec.~\ref{sec:language_understanding_wrong}. These two issues make many people,
-including myself, quite uneasy about this type of {\em model-based} approaches. 
+including myself, quite uneasy about this type of \emph{model-based} approaches. 
 
 In the remaining of this chapter, I will thus talk about model-free approaches
 (as opposed to these model-based approaches.)
@@ -3325,11 +3323,11 @@ In the remaining of this chapter, I will thus talk about model-free approaches
 \label{sec:ling_unit}
 
 Before continuing, there is one question that must be bugging you, or at least
-has bugged me a lot: {\em what is the minimal linguistic unit?} 
+has bugged me a lot: \emph{what is the minimal linguistic unit?} 
 
 If we think about written text, the minimal unit does seem like a character.
 With spoken language, the minimal unit seems to be a phoneme. But, is this the
-level at which we want to model the process of {\em understanding} natural
+level at which we want to model the process of \emph{understanding} natural
 language? In fact, to most of the existing natural language processing
 researchers as well as some (or most) linguists, the answer to this question is
 a hard ``no.''
@@ -3345,7 +3343,7 @@ valid word that has its own meaning, and similarly ``quiet'' is a valid word
 that has its own meaning, quite apart from that of ``quit.''
 
 It looks like a word is the level at which meaning begins to form itself.
-However, this raises a follow-up question on the definition of a word: {\em What
+However, this raises a follow-up question on the definition of a word: \emph{What
 is a word?}
 
 It is tempting to say that a sequence of non-blank characters is a word. This
@@ -3395,7 +3393,7 @@ can be represented as a sequence of $T$ discrete symbols such that
 \begin{align*}
     S = (w_1, w_2, \ldots, w_T).
 \end{align*}
-Each symbol is one element from a {\em vocabulary} $V$ which contains all
+Each symbol is one element from a \emph{vocabulary} $V$ which contains all
 possible symbols:
 \begin{align*}
     V = \left\{ v_1, v_2, \ldots, v_{|V|}\right\},
@@ -3438,8 +3436,7 @@ Eq.~\eqref{eq:indicator_function} which is defined as
         \right.
 \end{align*}
 This is equivalent to counting how many times $S$ occurs in the data.\footnote{
-    A data set consisting of (written) text is often referred to as a {\em
-    corpus}. 
+    A data set consisting of (written) text is often referred to as a \emph{    corpus}. 
 }
 
 \subsection{Data Sparsity/Scarcity}
@@ -3494,13 +3491,11 @@ are not familiar with a llama.) See Fig.~\ref{fig:ngram_fail} as an evidence.
 
 What does this mean for the estimate in Eq.~\eqref{eq:sentence_mle}? It means
 that this estimator will be too harsh for many of the plausible sentences that
-do not occur in the data. As soon as a given sentence does not appear {\em
-exactly} as it is in the corpus, this estimator will say that there is a {\em
-zero} probability of the given sentence. Although the sentence ``I like llama''
+do not occur in the data. As soon as a given sentence does not appear \emph{exactly} as it is in the corpus, this estimator will say that there is a \emph{zero} probability of the given sentence. Although the sentence ``I like llama''
 is a likely sentence, according to this estimator in
 Eq.~\eqref{eq:sentence_mle}, it will be deemed extremely unlikely.
 
-This problem is due to the issue of {\em data sparsity}. Data sparsity here
+This problem is due to the issue of \emph{data sparsity}. Data sparsity here
 refers to the phenomenon where a training set does not cover the whole space of
 input sufficiently. In more concrete terms, most of the points in the input
 space, which have non-zero probabilities according to the true, underlying
@@ -3517,8 +3512,7 @@ addressing this issue of data sparsity.
 \label{sec:n_gram_lm}
 
 The fact that the issue of data sparsity worsens as the maximum length of
-sentences grows hints us a straightforward approach to addressing this: {\em
-limit the maximum length of phrases/sentences we estimate a probability on}.
+sentences grows hints us a straightforward approach to addressing this: \emph{limit the maximum length of phrases/sentences we estimate a probability on}.
 This idea is a foundation on which a so-called $n$-gram language model is based.
 
 In the $n$-gram language model, we first rewrite the probability of a given
@@ -3542,7 +3536,7 @@ This results in
 \end{align*}
 
 What does this mean? Under this assumption we are saying that any symbol in a
-sentence is {\em predictable} based on the $n-1$ preceding symbols. This is in
+sentence is \emph{predictable} based on the $n-1$ preceding symbols. This is in
 fact a quite reasonable assumption in many languages. For instance, let us
 consider a phrase ``I am from''. Even without any more context information
 surrounding this phrase, such as surrounding words and the identity of a
@@ -3577,7 +3571,7 @@ sparsity.
 We can estimate the $n$-gram conditional probability $p(w_k | w_{k-n}, \ldots,
 w_{k-1})$ from the training corpus.
 Since it is a
-{\em conditional} probability, we need to rewrite it according to the definition
+\emph{conditional} probability, we need to rewrite it according to the definition
 of the conditional probability:
 \begin{align}
     \label{eq:n_gram_prob}
@@ -3621,7 +3615,7 @@ Eqs.~\eqref{eq:n_gram_prob}--\eqref{eq:n_gram_marginal}:
 
 \subsection{Smoothing and Back-Off}
 
-{\em Note that I am missing many references this section, as I am writing this
+\emph{Note that I am missing many references this section, as I am writing this
     on my travel. I will fill in missing references once I'm back from my
 travel.}
 
@@ -3656,12 +3650,11 @@ of all possible trigrams:
 
 One may mistakenly believe that we can simply increase the size of corpus
 (collecting even more data) to avoid this issue. However, remember that
-``\emph{data sparsity is almost always an issue in statistical modeling}''
+``\textit{data sparsity is almost always an issue in statistical modeling}''
 \citep{chen1996empirical}, which means that more data call for better statistical
 models with often more parameters leading to the issue of data sparsity.
 
-One way to alleviate this problem is to assign a small probability to all {\em
-unseen} $n$-grams. At least, in this case, we will assign some small, non-zero
+One way to alleviate this problem is to assign a small probability to all \emph{unseen} $n$-grams. At least, in this case, we will assign some small, non-zero
 probability to any sentence, thereby avoiding a valid, but zero-probability
 sentence under the $n$-gram language model. One simplest implementation of this
 approach is to assume that each and every $n$-gram occurs at least $\alpha$
@@ -3795,21 +3788,21 @@ For details on how this modified KN smoothing has been designed, see
 %There are a number of considerations to be taken when designing this
 %coefficient function $\lambda$. 
 
-%{\em back-off} to lower-order $n$-grams when a given
+%\emph{back-off} to lower-order $n$-grams when a given
 %$n$-gram did not occur in the training corpus. For instance, if ``chases a
 %llama'' has not at all in the training corpus, 
 
 \subsection{Lack of Generalization}
 
 Although $n$-gram language modelling works like a charm in many cases. This is
-still not totally satisfactory, because of the lack of {\em generalization}.
-What do I mean by {\em generalization} here?
+still not totally satisfactory, because of the lack of \emph{generalization}.
+What do I mean by \emph{generalization} here?
 
 Consider an example where three trigrams\footnote{
     Is ``trigram'' a proper term? Certainly not, but it is widely accepted by
     the whole community of natural language processing researchers. Here's an
     interesting discussion on how $n$-grams should be referred to as, from
-    \citet{manning1999foundations}: ``\emph{
+    \citet{manning1999foundations}: ``\textit{
         these
         alternatives are usually referred to as a bigram, a trigram, and a
         four-gram model, respectively. Revealing this will surely be enough to
@@ -3840,14 +3833,14 @@ $n$-gram language modeling will be zero.\footnote{
     a ``llama'' is an animal similar to a ``cat'', ``dog'' or ``rabbit''.
 } This issue is closely related to data sparsity, but the main difference is
 that it is not the lack of data, or $n$-grams, but the lack of world knowledge.
-In other words, there {\em exist} relevant $n$-grams in the training corpus, but
+In other words, there \emph{exist} relevant $n$-grams in the training corpus, but
 $n$-gram language modelling is not able to exploit these.
 
 At this point, it almost seems trivial to address this issue by incorporating
 existing knowledge into language modelling. For instance, one can think of using
 a dictionary to find the definition of a word in interest (continuing on from
 the previous example, the definition of ``llama'') and letting the language
-model notice that ``llama'' is a ``{\em a domesticated pack animal of the camel
+model notice that ``llama'' is a ``\emph{a domesticated pack animal of the camel
 family found in the Andes, valued for its soft woolly fleece}.'' Based on this,
 the language model should figure out that the probability of ``chases a llama''
 should be similar to ``chases a cat'', ``chases a dog'' or ``chases a rabbit''
@@ -3931,7 +3924,7 @@ be ignored except for the row corresponding to the index of the non-zero element
 of the one-hot vector. This row is multiplied by $1$, which simply gives us the
 same row as the result of this whole matrix--vector multiplication. In short,
 the multiplication of the transpose of a matrix with an one-hot vector is
-equivalent to {\em slicing out a single row from the matrix}.
+equivalent to \emph{slicing out a single row from the matrix}.
 
 In other words, let 
 \begin{align}
@@ -3964,7 +3957,7 @@ instead of
 Second, from this perspective, we can see each row of the matrix $\mE$ as a
 continuous-space representation of a corresponding word. $\ve_i$ will be a
 vector representation of the $i$-th word in the vocabulary $V$. This
-representation is often called a \emph{word embedding} and should reflect the
+representation is often called a \textit{word embedding} and should reflect the
 underlying meaning of the word. We will discuss this further shortly.
 
 Closely following \citet{bengio2006neural}, we will simply concatenate the
@@ -3973,7 +3966,7 @@ continuous-space representations of the input words such that
     \vp = \left[ \vp^1; \vp^2; \ldots; \vp^{n-1}\right]^\top
 \end{align*}
 This vector $\vp$ is a representation of $n-1$ input words in a continuous
-vector space and often referred to as a {\em context vector}.
+vector space and often referred to as a \emph{context vector}.
 
 This context vector is fed through a composition of nonlinear feature extraction
 layers. We can for instance apply the simple transformation layer from
@@ -4051,7 +4044,7 @@ context words, or preceding $n-1$ words to a continuous vector space:
 \begin{align*}
     f: \left\{ 0, 1\right\}^{|V| \times n-1} \to \RR^d
 \end{align*}
-We will call the resulting vector $\vh$ a {\em context vector}.
+We will call the resulting vector $\vh$ a \emph{context vector}.
 The second stage $g$ maps this continuous vector $\vh$ to the target word
 probability, by applying affine transformation to the vector $\vh$ followed by
 softmax normalization. 
@@ -4075,7 +4068,7 @@ only one of the target words $w_l$:
     p_k^l =& p(w_l | \vh_k) = \frac{1}{Z_k} \exp\left( \vw_l^\top \vh_k \right).
 \end{align*}
 The ratio between $p_j^l$ and $p_k^l$ is then\footnote{
-    Note that both $p_j^l$ and $p_k^l$ are positive due to our use of {\em softmax}.
+    Note that both $p_j^l$ and $p_k^l$ are positive due to our use of \emph{softmax}.
 }
 \begin{align*}
     \frac{p_j^l}{p_k^l} = \frac{Z_k}{Z_j} \exp\left( \vw_l^\top (\vh_j -
@@ -4117,7 +4110,7 @@ We will focus on the bold-faced phrases; ``three teams'', ``four teams'' and
 neural language model is asked to compute the probability of the word following
 the context word.
 
-It is important to notice that neural language model {\em must} project
+It is important to notice that neural language model \emph{must} project
 ``three'' and ``four'' to nearby points in the context space (see
 Eq.~\eqref{eq:nlm_context}.) This is because the context vectors from these two
 words need to give a similar probability to the word ``teams''. This naturally
@@ -4136,7 +4129,7 @@ Now, let's assume the case where we use the neural language model trained on
 this tiny training corpus to assign a probability to an unseen bigram ``three
 groups''. The neural language model will project the context word ``three'' to a
 point in the context space close to the point of ``four''. From this context
-vector, the neural language model will {\em have to} assign a high probability
+vector, the neural language model will \emph{have to} assign a high probability
 to the word ``groups'', because the context vector $\vh_{\text{three}}$ and the
 target word vector $\vu_{\text{groups}}$ well align. Thereby, even without ever
 seeing the bigram ``three groups'', the neural language model can assign a
@@ -4145,8 +4138,7 @@ illustration.
 
 What this example shows is that neural language model automatically learns the
 similarity among different context words (via context vectors $\vh$), and also among
-different target words (via target word vectors $\vu_k$), by exploiting {\em
-co-occurrences} of words. In this example, the neural language model learned
+different target words (via target word vectors $\vu_k$), by exploiting \emph{co-occurrences} of words. In this example, the neural language model learned
 that ``four'' and ``three'' are similar from the fact that both of them occur
 together with ``teams''. Similarly, in the target side, the neural language
 model was able to capture the similarity between ``teams'' and ``groups'' by
@@ -4178,14 +4170,13 @@ to project each high-dimensional word vector into a lower-dimensional space
 Approach}
 \label{sec:cbow}
 
-This is about time someone asks a question why we are only considering the {\em
-preceding} words when doing language modelling. Is it a good assumption that the
+This is about time someone asks a question why we are only considering the \emph{preceding} words when doing language modelling. Is it a good assumption that the
 conditional distribution over a word is only dependent on preceding words? 
 
 In fact, we do not have to do so. We can certainly model a natural language
 sentence such that each word in a sentence is conditioned on $2n$ surrounding
 words ($n$ words to the left and $n$ words to the right.) In this case, we get a
-{\em Markov random field (MRF) language model} \citep{jernite2015fast}.
+\emph{Markov random field (MRF) language model} \citep{jernite2015fast}.
 
 \begin{figure}[ht]
     \centering
@@ -4197,7 +4188,7 @@ words ($n$ words to the left and $n$ words to the right.) In this case, we get a
 
 In a Markov random field (MRF) language model (MRF-LM), we say each word in a
 given sentence is a random variable $w_i$. We connect each word with its $2n$
-surrounding words with {\em undirected} edges, and these edges represent the
+surrounding words with \emph{undirected} edges, and these edges represent the
 conditional dependency structure of the whole MRF-LM. An example of an MRF-LM
 with $n=1$ is shown in Fig.~\ref{fig:mrf_lm}.
 
@@ -4239,10 +4230,10 @@ computational intractability in Markov random fields.
 Although compute the full sentence probability is intractable in this MRF-LM, it
 is quite straightforward to compute the conditional probability of each word
 $w^i$ given all the other words. When computing the conditional probability, we
-must first notice that the conditional probability of $w^i$ {\em only} depends
-on the values of other words included in its {\em Markov blanket.} In the case
+must first notice that the conditional probability of $w^i$ \emph{only} depends
+on the values of other words included in its \emph{Markov blanket.} In the case
 of Markov random fields, the Markov blanket of a random variable is defined as a
-set of all {\em immediate neighbours}, and it implies that the conditional
+set of all \emph{immediate neighbours}, and it implies that the conditional
 probability of $w^i$ is dependent only on $n$ preceding words and the $n$
 following words. See Fig.~\ref{fig:mrf_lm_mblanket} for an example.
 
@@ -4269,8 +4260,7 @@ where $Z'$ is a normalization constant computed by
 \end{align*}
 
 Do you see a stark similarity to neural language model we discussed earlier?
-This conditional probability is a shallow neural network with a single {\em
-linear} hidden layer whose input are the context words ($n$ preceding and $n$
+This conditional probability is a shallow neural network with a single \emph{linear} hidden layer whose input are the context words ($n$ preceding and $n$
 following words) and the output is the conditional distribution of the center
 word $w_i$. We will talk about this shortly in more depth. See
 Fig.~\ref{fig:cbow} for graphical illustration.
@@ -4358,7 +4348,7 @@ with negative sampling \citep[see][]{mikolov2013efficient} is equivalent to
 factorizing a positive point-wise mutual information matrix (PPMI) into two
 lower-dimensional matrices. The left lower-dimensional matrix corresponds to the
 input word embedding matrix $\mE$ in a skip-gram model. In other words, training
-a skip-gram model {\em implicitly} factorizes a PPMI matrix. 
+a skip-gram model \emph{implicitly} factorizes a PPMI matrix. 
 
 Their work drew a nice connection between the existing works on distributional word
 representations from natural language processing, or even computational
@@ -4371,7 +4361,7 @@ further detail in this course, but I encourage readers to read \citet{Omer2014}.
 
 One thing I want to emphasize in these language models, including $n$-gram
 language model, neural language model and continuous bag-of-words model, is that
-they are purely {\em unsupervised}, meaning that all we need is a large corpus
+they are purely \emph{unsupervised}, meaning that all we need is a large corpus
 of unannotated text. This is one thing that makes this statistical approach to
 language modelling much more appealing than any other approach based on
 linguistic structures (see Sec.~\ref{sec:linguistic_lm} for a brief discussion.) 
@@ -4386,7 +4376,7 @@ What this implies is that once we train this type of language model on a large,
 or effectively infinite,\footnote{
     Why? Because of almost universal broadband access to the Internet!
 }
-corpus of {\em unlabelled} text, we get good vectors for those linguistic units
+corpus of \emph{unlabelled} text, we get good vectors for those linguistic units
 for free. Among these, word vectors, the rows of the input weight matrix $\mE$
 in Eq.~\eqref{eq:word_emb}, have been extensively used in many natural language
 processing applications in recent years since
@@ -4406,24 +4396,24 @@ There are two issues here. First, it is unclear how we should represent the
 input, in this case a word. A good reader who has read this note so far will be
 clearly ready to use an one-hot vector and use a softmax layer in the output,
 and I commend you for that. However, this still does not solve a more serious
-issue which is that we have only {\em two} training examples!  All the word
+issue which is that we have only \emph{two} training examples!  All the word
 vectors, save for two vectors corresponding to the words in the training set,
 will not be updated at all.
 
 One way to overcome these two issues is to make somewhat strong, but reasonable
-assumption that {\em similar} input will have similar sentiments. This
+assumption that \emph{similar} input will have similar sentiments. This
 assumption is at the heart of semi-supervised learning \citep{Chapelle2006}. It
 says that high-dimensional data points in effect lies on a lower-dimensional
 manifold, and the target values of the points on this manifold change smoothly.
 Under this assumption, if we can well model this lower-dimensional data manifold
 using unlabelled training examples, we can train a good classifier\footnote{
     What do I mean by a good classifier? A good classifier is a classifier that
-    classifies {\em unseen} test examples well. See
+    classifies \emph{unseen} test examples well. See
     Sec.~\ref{sec:model_selection}.
 } 
 
 And, guess what? We have access to this lower-dimensional manifold, which is
-represented by the set of {\em pretrained} word vectors $\mE$. Believing that
+represented by the set of \emph{pretrained} word vectors $\mE$. Believing that
 similar words have similar sentiment and that these pretrained word vectors
 indeed well reflect similarities among words, let me build a simple nearest
 neighbour (NN) classifier which uses the pretrained word vectors:
@@ -4476,8 +4466,7 @@ in order to give a high probability to those forms of ``feel'' as a middle word.
 This is understandable and agrees quite well with our intuition. All those
 emotion-describing words are similar to each other in the sense that they all
 describe emotion. But, wait, this aspect of similarity is not going to help
-sentiment classification of words. In fact, this aspect of similarity will {\em
-hurt} the sentiment classifier, because a positive word ``happy'' will be close
+sentiment classification of words. In fact, this aspect of similarity will \emph{hurt} the sentiment classifier, because a positive word ``happy'' will be close
 to negative words ``sad'' and ``angry'' in this word vector space!
 
 The lesson here is that when you are solving a language-related task with very
@@ -4550,7 +4539,7 @@ graphical illustration.
 Why am I talking about this again, after saying that the task of part-of-speech
 tagging is not even going to be considered as a valid topic for the final
 project? Because the very same model for part-of-speech tagging will be turned
-into the very {\em recurrent neural network language model} in this section.
+into the very \emph{recurrent neural network language model} in this section.
 
 Let us start by considering a single conditional distribution, marked (a) below,
 from the full sentence probability:
@@ -4593,9 +4582,9 @@ where $\vmu$ is a vector of probabilities of all the words in the vocabulary.
 
 One thing to notice here is that the iteration procedure in
 Eq.~\eqref{eq:rnnlm_iteration} computes a sequence of every memory state vector
-$\vh^t$ by simply reading the input sentence {\em once}. In other words, we can
+$\vh^t$ by simply reading the input sentence \emph{once}. In other words, we can
 let the recurrent neural network read one word $w^t$ at a time, update the
-memory state $\vh^t$ and compute the conditional probability of the {\em next}
+memory state $\vh^t$ and compute the conditional probability of the \emph{next}
 word $p(w^{t+1}|w^{\leq t})$. 
 
 This procedure is illustrated in Fig.~\ref{fig:rnn_lm}~(b).\footnote{
@@ -4604,7 +4593,7 @@ This procedure is illustrated in Fig.~\ref{fig:rnn_lm}~(b).\footnote{
     recurrent function $f$ to compute the conditional probability of the first
     word in the input sentence.
 }
-This language model is called a {\em recurrent neural network language
+This language model is called a \emph{recurrent neural network language
 model} or RNN-LM \citep{mikolov2010recurrent}.
 
 But, wait, from looking at Figs.~\ref{fig:rnn_lm}~(a)--(b), there is a clear
@@ -4633,7 +4622,7 @@ Now the question is which one of these language models we should use in practice
 In order to answer this, we must first discuss the metric most commonly used for
 evaluating language models.
 
-The most commonly used metric is a {\em perplexity}. In the context of language
+The most commonly used metric is a \emph{perplexity}. In the context of language
 modelling, the perplexity $\PPL$ of a model $\MM$ is computed by
 \begin{align}
     \label{eq:ppl}
@@ -4668,12 +4657,12 @@ Let's take a look at a single term inside the summation above:
     \log p_{\MM}(w_n | w_{<n}).
 \end{align*}
 This is simply measuring how high a probability the language model $\MM$ is
-assigning to a {\em correct next word} given all the previous words. Again,
+assigning to a \emph{correct next word} given all the previous words. Again,
 because $\log$ is a monotonically increasing function.
 
 In summary, the (inverse) perplexity measures how high a probability the
 language model $\MM$ assigns to correct next words in the test/validation corpus
-{\em on average}.  Therefore, {\em a better language model is the one with a lower
+\emph{on average}.  Therefore, \emph{a better language model is the one with a lower
 perplexity}.  There is nothing so perplexing about the perplexity, once we start
 viewing it from this perspective.
 
@@ -4757,8 +4746,7 @@ crystal clear how these captured structures differ from each other.
 \chapter{Neural Machine Translation}
 \label{chap:nmt}
 
-Finally, we have come to the point in this course where we discuss an {\em
-actual} natural language task. In this chapter, we will discuss how translation
+Finally, we have come to the point in this course where we discuss an \emph{actual} natural language task. In this chapter, we will discuss how translation
 from one language to another can be done with statistical methods, more
 specifically neural networks.
 
@@ -4821,12 +4809,12 @@ Chapter~\ref{chap:nlm}:
         \underbrace{X}_{\text{conditional}}
 )}_{\text{language modelling}}
 \end{align}
-Looking at it in this way, it is clear that this is nothing but {\em conditional
+Looking at it in this way, it is clear that this is nothing but \emph{conditional
 language modelling}.  This means that we can use any of the techniques we have
 used earlier in Chapter~\ref{chap:nlm} for statistical machine translation.
 
 Training can be trivially done by maximizing the log-likelihood or equivalently
-minimizing the {\em negative} log-likelihood (see
+minimizing the \emph{negative} log-likelihood (see
 Sec.~\ref{sec:distribution_approx}):
 \begin{align}
     \label{eq:nmt_cost}
@@ -4838,7 +4826,7 @@ given a training set
     \label{eq:data}
     D = \left\{ (X^1, Y^1), (X^2, Y^2), \ldots, (X^N, Y^N)\right\}
 \end{align}
-consisting of $N$ training {\em pairs}.
+consisting of $N$ training \emph{pairs}.
 
 \begin{figure}[t]
     \centering
@@ -4875,15 +4863,14 @@ section, we must first discuss two issues; (1) where do we get training data?
 
 First, let us consider again what the problem we're trying to solve here. It is
 machine translation, and from the description in the previous section and from
-Eqs.~\eqref{eq:translation_f}--\eqref{eq:condlm}, it is a {\em
-sentence-to-sentence} translation task. We approach this problem by building a
+Eqs.~\eqref{eq:translation_f}--\eqref{eq:condlm}, it is a \emph{sentence-to-sentence} translation task. We approach this problem by building a
 model that takes as input a source sentence $S$ and computes the probability
 $P(Y|X)$ of a target sentence $Y$, equivalently a translation. In order for this
 model to translate, we must train it with a training set of pairs of a source
 sentence and its correct translation.
 
 The very first problem we run into is where we can find this training set which
-is often called a {\em parallel corpus}. It is not easy to think of documents
+is often called a \emph{parallel corpus}. It is not easy to think of documents
 which have been translated into multiple languages. Let's take for instance all
 the books that are being translated each year. According to \citet{post2011},
 approximately 3\% of titles published each year in English are
@@ -4926,10 +4913,10 @@ bilingual, or multilingual countries.
 
 \citet{brown1990statistical} used the proceedings from the Canadian
 parliament, which are by law kept in both French and English. All of these
-proceedings are digitally available and called {\em Hansards}. You can check it
+proceedings are digitally available and called \emph{Hansards}. You can check it
 yourself online at \url{http://www.parl.gc.ca/}, and here's an excerpt from the
 Prayers of the 2nd Session, 41st Parliament, Issue 152:\footnote{
-    This is one political lesson here: {\em Canada is still headed by the Queen of
+    This is one political lesson here: \emph{Canada is still headed by the Queen of
     the United Kingdom}.
 }
 \begin{itemize}
@@ -5053,7 +5040,7 @@ Internet is the Common Crawl Parallel Corpus created by \citet{smith2013dirt} av
 \label{sec:bleu}
 
 Let's say we have trained a machine translation model on a training corpus. A
-big question follows: {\em how do we evaluate this model}?
+big question follows: \emph{how do we evaluate this model}?
 
 In the case of classification, evaluation is quite straightforward. All we need
 to do is to classify held-out test examples with a trained classifier and see
@@ -5225,7 +5212,7 @@ automatic evaluation metric. It has been shown that the BLEU is only adequate in
 comparing two similar machine translation systems, but not too much so in
 comparing two very different systems. For instance,
 \citet{callison2006re} observed that the BLEU underestimates the quality of
-the machine translation system that is {\em not} a phrase-based statistical
+the machine translation system that is \emph{not} a phrase-based statistical
 system. See Fig.~\ref{fig:bleu}~(b) for an example.
 
 BLEU is definitely not a perfect metric, and many researchers strive to build a
@@ -5251,7 +5238,7 @@ recurrent neural network from Chapter~\ref{chap:rnn}. However, unlike the
 previous examples, there is no explicit target/output in this case. All we need
 is a (vector) summary of the source sentence.
 
-We call this recurrent neural network an {\em encoder}, as it encodes the source
+We call this recurrent neural network an \emph{encoder}, as it encodes the source
 sentence into a (continuous vector) code. It is implemented as
 \begin{align}
     \label{eq:nmt_encoder}
@@ -5295,9 +5282,9 @@ After reading the whole sentence up to $\vx_{T_x}$, the last memory state
 $\vh_{T_x}$ of the encoder summarizes the whole source sentence into a single
 vector, as shown in Fig.~\ref{fig:nmt}~(a). Thanks to this encoder, we can now
 work with a single vector instead of a whole sequence of source words. Let us
-denote this vector as $\vc$ and call it a {\em context vector}.
+denote this vector as $\vc$ and call it a \emph{context vector}.
 
-We now need to design a {\em decoder}, again, using a recurrent neural network.
+We now need to design a \emph{decoder}, again, using a recurrent neural network.
 As I mentioned earlier, the decoder is really nothing but a language model,
 except that it is conditioned on the source sentence $X$. What this means is
 that we can build a recurrent neural network language model from
@@ -5325,7 +5312,7 @@ Eq.~\eqref{eq:softmax} from Sec.~\ref{sec:distribution_approx}.
 
 Now, should we again initialize $\vz_0$ to be an all-zero vector? Maybe, or
 maybe not. One way to view what this decoder does is that the decoder models a
-{\em trajectory} in a continuous vector space, and each point in the trajectory
+\emph{trajectory} in a continuous vector space, and each point in the trajectory
 is $\vz_t$. Then, $\vz_0$ acts as a starting point of this trajectory, and it is
 natural to initialize this starting point to be a point relevant to the source
 sentence. Because we have access to the source sentence's content via $\vc$, we
@@ -5431,8 +5418,8 @@ simply following Eq.~\eqref{eq:condlm}.
 \end{figure}
 
 Of course, we cannot compute the conditional probabilities of all possible
-sentences. Hence, we must resort to some kind of {\em approximate search}. Wait,
-{\em search}? Yes, this whole procedure of finding the most likely translation
+sentences. Hence, we must resort to some kind of \emph{approximate search}. Wait,
+\emph{search}? Yes, this whole procedure of finding the most likely translation
 is equivalent to searching through a space, in this case a tree, of all possible
 sentences for one sentence that has the highest conditional probability.
 
@@ -5449,7 +5436,7 @@ repeated until the selected $\hat{y}_t$ is a symbol corresponding to the end of
 the translation (often denoted as \eos{}.) See Fig.~\ref{fig:searchspace}~(b)
 for illustration.
 
-There is a big problem of this {\em greedy search}. That is, as soon as it makes
+There is a big problem of this \emph{greedy search}. That is, as soon as it makes
 one mistake at one time step, there is no way for this search procedure to
 recover from this mistake. This happens because the conditional distributions at
 later steps depend on the choices made earlier. 
@@ -5490,7 +5477,7 @@ p(w_1')$.
 Unfortunately, the only way to completely avoid this undesirable situation is to
 consider all the possible paths starting from the very first time step. This is
 exactly the reason why we introduced the greedy search in the first place, but
-the greedy search is {\em too} greedy. The question is then whether there is
+the greedy search is \emph{too} greedy. The question is then whether there is
 something in between the exact search and the greedy search.
 
 \paragraph{Beam Search}
@@ -5542,7 +5529,7 @@ the $K$ most likely new hypotheses.
     \label{fig:beamsearch}
 \end{figure}
 
-It should be clear that this procedure, called {\em beam search} and shown in
+It should be clear that this procedure, called \emph{beam search} and shown in
 Fig.~\ref{fig:beamsearch}, becomes
 equivalent to the exact search, as $K\to \infty$. Also, when $K=1$, this
 procedure is equivalent to the greedy search. In other words, this beam search
@@ -5562,7 +5549,7 @@ any valid translation being of a length $3$. In the first step, we have
 \begin{align*}
     p(a) = 0.5, p(b) = 0.15, p(c) = 0.45.
 \end{align*}
-In the case of $K=1$, i.e., {\em greedy search}, we choose $a$. If $K=2$, we
+In the case of $K=1$, i.e., \emph{greedy search}, we choose $a$. If $K=2$, we
 will keep $(a)$ and $(c)$. 
 
 Given $a$ as the first symbol, we have
@@ -5620,7 +5607,7 @@ validation set, after trying a number of values--$\left\{ 1, 2, 4, 8, 16
 \right\}$.
 
 If you're interested in how to improve beam search by backtracking so that the
-beam search becomes {\em complete}, refer to, e.g.,
+beam search becomes \emph{complete}, refer to, e.g.,
 \citet{furcy2005limited,zhou2005beam}. If you're interested in general search
 strategies, refer to \citet{russell1995artificial}.  Also, in the context of
 statistical machine translation, it is useful to read \citet{koehn2004pharaoh}.
@@ -5632,8 +5619,8 @@ statistical machine translation, it is useful to read \citet{koehn2004pharaoh}.
 One important property of the simple encoder-decoder model for neural machine
 translation (from Sec.~\ref{sec:nmt_simple}) is that a whole source sentence is
 compressed into a single real-valued vector $\vc$. This sounds okay, since the
-space of all possible source sentences is {\em countable}, while the context
-vector space $\left[ -1, 1 \right]^d$ is {\em uncountable}. There exists a
+space of all possible source sentences is \emph{countable}, while the context
+vector space $\left[ -1, 1 \right]^d$ is \emph{uncountable}. There exists a
 mapping from this sentence space to the context vector space, and all we need to
 ensure is that training the simple encoder-decoder model finds this mapping.
 This is conditioned on the assumption that the hypothesis space\footnote{
@@ -5650,11 +5637,11 @@ vector to a target sentence. In fact, this fact was empirically validated last
 year (2014), when the almost identical models from two groups
 \citep{sutskever2014sequence,cho2014properties} showed vastly different
 performances on the same English--French translation task. The only difference
-there was that \citet{sutskever2014sequence} used a {\em much}
+there was that \citet{sutskever2014sequence} used a \emph{much}
 larger model than did \citet{cho2014properties}.
 
 At a more fundamental level there's a question of whether a natural language
-sentence {\em should} be fully represented as a single vector. For instance,
+sentence \emph{should} be fully represented as a single vector. For instance,
 there is now a famous quote by Prof. Raymond Mooney\footnote{
     \url{https://www.cs.utexas.edu/~mooney/}
 } 
@@ -5666,7 +5653,7 @@ linguistics.
 
 Our goal is rather to investigate the possibility of avoiding this situation of
 having to learn a highly nonlinear, complex mapping from a source sentence to a
-single vector. The question we are more interested in is whether {\em there
+single vector. The question we are more interested in is whether \emph{there
     exists a neural network that can handle a variable-length sentence by
 building a variable-length representation of it}. Especially, we are interested
 in whether we can build a neural machine translation system that can exploit a
@@ -5682,15 +5669,15 @@ length, was mapped to a single context vector by a recurrent neural network:
 See Eq.~\eqref{eq:nmt_encoder} and the surrounding text for more details.
 
 Instead, here we will encode a source sentence $X=(x_1, x_2, \ldots, x_{T_x})$
-with a {\em set $C$ of context vectors} $\vh_t$'s. This is achieved by having
+with a \emph{set $C$ of context vectors} $\vh_t$'s. This is achieved by having
 two recurrent neural networks rather than a single recurrent neural networks, as
 in the simple encoder-decoder model. The first recurrent neural network, to
-which we will refer as a {\em forward recurrent neural network}, reads the
-source sentence as usual and results in a set of {\em forward memory states}
+which we will refer as a \emph{forward recurrent neural network}, reads the
+source sentence as usual and results in a set of \emph{forward memory states}
 $\overrightarrow{\vh}_t$, for $t=1,\ldots,T_x$. The second recurrent neural
-network, a {\em reverse recurrent neural network}, reads the source sentence
+network, a \emph{reverse recurrent neural network}, reads the source sentence
 in a reverse order, starting from $x_{T_x}$ to $x_1$. This reverse network will
-output a sequence of {\em reverse memory states} $\overleftarrow{\vh}_t$, for
+output a sequence of \emph{reverse memory states} $\overleftarrow{\vh}_t$, for
 $t=1, \ldots, T_x$.
 
 \begin{figure}[t]
@@ -5703,7 +5690,7 @@ $t=1, \ldots, T_x$.
 \end{figure}
 
 For each $x_t$, we will concatenate $\overrightarrow{\vh}_t$ and
-$\overleftarrow{\vh}_t$ to form a {\em context-dependent vector} $\vh_t$:
+$\overleftarrow{\vh}_t$ to form a \emph{context-dependent vector} $\vh_t$:
 \begin{align}
     \label{eq:cd_rep}
     \vh_t = \left[ \begin{array}{c}
@@ -5711,11 +5698,11 @@ $\overleftarrow{\vh}_t$ to form a {\em context-dependent vector} $\vh_t$:
             \overleftarrow{\vh}_t
     \end{array} \right]
 \end{align}
-We will form a {\em context set} with these context-dependent vectors $c=\left\{
+We will form a \emph{context set} with these context-dependent vectors $c=\left\{
 \vh_1, \vh_2, \ldots, \vh_{T_x}\right\}$. See Fig.~\ref{fig:bienc} for the
 graphical illustration of this process.
 
-Now, why is $\vh_t$ a {\em context-dependent vector}? We should look at what the
+Now, why is $\vh_t$ a \emph{context-dependent vector}? We should look at what the
 input was to a function that computed $\vh_t$. The first half of $\vh_t$,
 $\overrightarrow{\vh}_t$, was computed by
 \begin{align*}
@@ -5761,17 +5748,17 @@ Before anything let us think of what the memory state $\vz_t$ of the decoder
 
 It is computed based on all the generated target words so far $(\tilde{y}_1,
 \tilde{y}_2, \ldots, \tilde{y}_{t-1})$ and the context vector\footnote{
-    We will shortly switch to using a context {\em set} instead.
+    We will shortly switch to using a context \emph{set} instead.
 }
 $\vc$ which is the summary of the source sentence. The very reason why I
 designed the decoder in this way is so that the memory state $\vz_t$ is
-informative of which target word should be generated at time $t$ {\em after}
-generating the first $t-1$ target words {\em given} the source sentence. In
-order to do so, $\vz_t$ must encode {\em what have been translated so far} among
+informative of which target word should be generated at time $t$ \emph{after}
+generating the first $t-1$ target words \emph{given} the source sentence. In
+order to do so, $\vz_t$ must encode \emph{what have been translated so far} among
 the words that are supposed to be translated (which is encoded in the context
 vector $\vc$.) Let's keep this in mind.
 
-In order to compute the new memory state $\vz_t$ with a {\em context set}
+In order to compute the new memory state $\vz_t$ with a \emph{context set}
 $C=\left\{ \vh_1, \vh_2, \ldots, \vh_{T_x}\right\}$,
 we must first get one vector out of $T_x$ context vectors. Why is this
 necessary? Because we cannot have an infinitely large number of parameters to
@@ -5789,7 +5776,7 @@ from an unspecified number of context vectors $\vh_t$'s?
 \end{figure}
 
 First, let us score each context vector $\vh_j$ ($j=1, \ldots, T_x$) based on
-how {\em relevant} it is for translating a next target word. This scoring needs
+how \emph{relevant} it is for translating a next target word. This scoring needs
 to be based on (1) the previous memory state $\vz_{t-1}$ which summarizes what
 has been translated up to the $(t-2)$-th word\footnote{
     Think of why this is only up to the $(t-2)$-th word not up to the $(t-1)$-th
@@ -5800,7 +5787,7 @@ $j$-th context vector $\vh_j$:
     \label{eq:nmt_score}
     e_{j, t} = f_{\text{score}}(\vz_{t-1}, \mE_y^\top \tilde{y}_{t-1}, \vh_j).
 \end{align}
-Conceptually, the score $e_{j,t}$ will be computed by {\em comparing}
+Conceptually, the score $e_{j,t}$ will be computed by \emph{comparing}
 $(\vz_{t-1}, \tilde{y}_{t-1})$ with the context vector $\vc_j$. See
 Fig.~\ref{fig:att1} for graphical illustration.
 
@@ -5810,10 +5797,9 @@ computed by $f_{\text{score}}$, we normalize them with a softmax function:
     \label{eq:att_weight}
     \alpha_{j, t} = \frac{\exp(e_{j,t})}{\sum_{j'=1}^{T_x} \exp(e_{j',t})}.
 \end{align}
-We call these normalized scores the {\em attention weights}, as they correspond
-to how much the {\em decoder attends} to each of the context vectors. This whole
-process of computing the attention weights is often referred to as an {\em
-attention mechanism} \citep[see, e.g.,][]{cho2015describing}.
+We call these normalized scores the \emph{attention weights}, as they correspond
+to how much the \emph{decoder attends} to each of the context vectors. This whole
+process of computing the attention weights is often referred to as an \emph{attention mechanism} \citep[see, e.g.,][]{cho2015describing}.
 
 \begin{figure}[t]
     \centering
@@ -5849,7 +5835,7 @@ all the target words in a vocabulary happen without any change from the simple
 encoder-decoder model in Sec.~\ref{sec:nmt_simple}.
 
 We will call this model, which has a bidirectional recurrent neural network as
-an encoder and a decoder with the attention mechanism, an {\em attention-based
+an encoder and a decoder with the attention mechanism, an \emph{attention-based
 encoder-decoder model}. This approach was proposed last year (2014) in the
 context of machine translation in \citet{bahdanau2014neural} and has been studied
 extensively in \citet{luong2015effective}.
@@ -5878,10 +5864,10 @@ the last states. The attention mechanism then can exploit this to assign a large
 score to these two memory states (but still constant across time $t$.) This will
 become even closer to the simple encoder-decoder model.
 
-The question is how we can avoid these degenerate cases. Or, {\em is it
+The question is how we can avoid these degenerate cases. Or, \emph{is it
 necessary for us to explicitly make these degenerate cases unlikely?} Of course,
 there is no single answer to this question. Let me give you my answer, which may
-differ from others' answer: {\em no}.
+differ from others' answer: \emph{no}.
 
 The goal of introducing a novel network architecture is to guide a model
 according to our intuition or scientific observation so that it will do a better
@@ -5889,7 +5875,7 @@ job at a target task. In our case, the attention mechanism was introduced based
 on our observation, and some intuition, that it is not desirable to ask the
 encoder to compress a whole source sentence into a single vector. 
 
-This incorporation of {\em prior knowledge} however should not put a {\em hard
+This incorporation of \emph{prior knowledge} however should not put a \emph{hard
 constraint}. We give a model a possibility of exploiting this prior knowledge,
 but should not force the model to use this prior knowledge exclusively. As this
 prior knowledge, based on our observation of a small portion of data, is not
@@ -5912,7 +5898,7 @@ given a pair of source $X$ and target $Y$ sentences,\footnote{
     translate and align simultaneously.
 }
 the attention-based model
-computes an {\em alignment} matrix $A \in \left[ 0, 1\right]^{|X| \times |Y|}$:
+computes an \emph{alignment} matrix $A \in \left[ 0, 1\right]^{|X| \times |Y|}$:
 \begin{align*}
     A = \left[ 
         \begin{array}{c c c c}
@@ -5926,7 +5912,7 @@ computes an {\em alignment} matrix $A \in \left[ 0, 1\right]^{|X| \times |Y|}$:
 where $\alpha_{j,t}$ is defined in Eq.~\eqref{eq:att_weight}.
 
 Each column $\va_t$ of this alignment matrix $A$ is how well each source word
-(based on its {\em context-dependent vector representation} from
+(based on its \emph{context-dependent vector representation} from
 Eq.~\eqref{eq:cd_rep}) is aligned to the $t$-th target word. Each row $\vb_{j}$
 similarly shows how well each target word is aligned to the content-dependent
 vector of the $j$-th source word. In other words, we can simply draw the
@@ -6065,7 +6051,7 @@ Now, this sounds familiar, doesn't it?
 As long as there was a parallel corpus, we are able to use neural machine
 translation models, described throughout this chapter, without ever caring about
 which languages we are training a model to translate between.  Especially if we
-decide to consider each sentence as a sequence of {\em characters},\footnote{
+decide to consider each sentence as a sequence of \emph{characters},\footnote{
     In fact, only very recently people have started investigating the
     possibility of building a machine translation system based on character
     sequences \citep{ling2015character}. This has been made possible due to the
@@ -6083,9 +6069,8 @@ knowledge about source and target languages. All it needs is a large corpus.
 \paragraph{Importance of Context}
 
 Recall from Sec.~\ref{sec:att_mt} that the encoder of an attention-based neural
-machine translation uses a {\em bidirectional} recurrent neural network in order
-to obtain a context set. Each vector in the context set was considered a {\em
-context-dependent vector}, as it represents what the center word means with
+machine translation uses a \emph{bidirectional} recurrent neural network in order
+to obtain a context set. Each vector in the context set was considered a \emph{context-dependent vector}, as it represents what the center word means with
 respect to all the surrounding words. This context dependency is a necessary
 component in making the whole attention-based neural machine translation, as it
 helps disambiguating the meaning of each word and also distinguishing multiple
@@ -6187,10 +6172,10 @@ labels (see Eq.~\eqref{eq:multiclass}.)
 This means that we can make the simple encoder-decoder model to work with
 non-language input simply by replacing the recurrent neural network based
 encoder with the feature extraction stage of the multilayer perceptron.
-Furthermore, it is possible to {\em pretrain} this feature extractor by training
+Furthermore, it is possible to \emph{pretrain} this feature extractor by training
 the whole multilayer perceptron on a separate classification dataset.\footnote{
     This way of using a feature extractor pretrained from another network has
-    become a {\em de facto} standard in many of the computer vision tasks
+    become a \emph{de facto} standard in many of the computer vision tasks
     \citep{sermanet2013overfeat}. This
     is also closely related to semi-supervised learning with pretrained word
     embeddings which we discussed in Sec.~\ref{sec:semi_emb}. In that case, it
@@ -6217,7 +6202,7 @@ several research groups (almost simultaneously) last year (2014)
 earlier success of deep convolutional network on object recognition (see, e.g.,
 \citet{krizhevsky2012imagenet,simonyan2014very,szegedy2014going}) inspired them
 the idea to use the deep convolutional network's feature extractor together with
-the recurrent neural network decoder for the task of {\em image caption
+the recurrent neural network decoder for the task of \emph{image caption
 generation}. 
 
 \begin{wrapfigure}{l}{0.5\textwidth}
@@ -6233,10 +6218,9 @@ use the attention-based encoder-decoder model from Sec.~\ref{sec:att_mt} for
 image caption generation. Unlike the simple model, the attention-based model
 requires a context set instead of a context vector. The context set should
 contain multiple context vectors, and each vector should represent a spatial
-location with respect to the whole image, meaning each context vector is a {\em
-spatially-localized, context-dependent image descriptor}. This was achieved by
-using the last {\em convolutional} layer's activations of the pretrained deep
-convolutional network instead of the last {\em fully-connected} layer's. See
+location with respect to the whole image, meaning each context vector is a \emph{spatially-localized, context-dependent image descriptor}. This was achieved by
+using the last \emph{convolutional} layer's activations of the pretrained deep
+convolutional network instead of the last \emph{fully-connected} layer's. See
 Fig.~\ref{fig:att_img_cap} for graphical illustration of this approach.
 
 These approaches based on neural networks, or in other words based on
@@ -6252,7 +6236,7 @@ evaluation of the captions.
 
 In Sec.~\ref{sec:intro}, we talked about how we view natural languages as a
 function. This function of natural language maps from a tuple of a speaker's
-speech, a listener's mental state and {\em the surrounding world} to the
+speech, a listener's mental state and \emph{the surrounding world} to the
 listener's reaction, often as a form of natural language response.
 Unfortunately, in order to make it manageable, we decided to build a model that
 approximates only a part of this true function. 
@@ -6294,7 +6278,7 @@ e.g., language and vision, was earlier proposed in \citet{weston2010large}.
 
 A more sophisticated approach is to design and train a model to solve a task
 that requires tight interaction between language and other modalities. As our
-original goal is to build a {\em natural language function}, all we need to do
+original goal is to build a \emph{natural language function}, all we need to do
 is to build a function approximator that takes as input both language and other
 modalities. Recently, \citet{VQA} built a large-scale dataset of
 question-answer-image triplets, called visual question answering (VQA) for this
@@ -6415,8 +6399,7 @@ knowledge become obsolete, and at the same time previously unknown facts are
 added to the world knowledge. If anyone looked up ``Facebook'' before 2004, they
 would've ended up with yearly facebooks from American universities. Nowadays, it
 is almost certain that when a person looks up ``Facebook'', they will find
-information on ``Facebook'' the social network site. Having all the {\em
-current} world knowledge encoded in the model's parameters is not ideal in this
+information on ``Facebook'' the social network site. Having all the \emph{current} world knowledge encoded in the model's parameters is not ideal in this
 sense. 
 
 
@@ -6431,7 +6414,7 @@ reasons behind this restriction.
 
 First, what we have discussed so far has narrowly focused on handling a
 sentence. In Sec.~\ref{sec:lm}, I have described language model as a way to
-model a {\em sentence} probability $p(S)$. This is a bit weird in the sense that
+model a \emph{sentence} probability $p(S)$. This is a bit weird in the sense that
 we've been using a term ``language'' modelling not ``sentence'' modelling.
 Keeping it in mind, we can start looking at a probability of a document or
 discourse $D$ as a whole rather than as a product of sentence probabilities:
@@ -6520,13 +6503,13 @@ minimize it using an iterative optimization algorithm, specifically stochastic
 gradient descent, and learned the importance of having a validation set for both
 early-stopping and model selection. These are all basic topics that are dealt in
 almost any basic machine learning course, and the only thing that I would like
-to emphasize is the importance of {\em not looking at a held-out test set.} One
+to emphasize is the importance of \emph{not looking at a held-out test set.} One
 must always select anything related to learning, e.g., hyperparameters, networks
 architectures and so on, based solely on a validation set. As soon as one tunes
 any of those based on the test set performance, any result from this tuning
 easily becomes invalid, or at least highly disputable.
 
-In Chapter~\ref{chap:nn}, we finally talked about {\em deep} neural networks, or
+In Chapter~\ref{chap:nn}, we finally talked about \emph{deep} neural networks, or
 more traditionally called multilayer perceptron.\footnote{
     I personally prefer ``multilayer perceptron'', but it seems like it
     has gone out of fashion.
